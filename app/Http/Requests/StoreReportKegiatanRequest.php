@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\ValidationRule;
+// use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,9 +24,10 @@ class StoreReportKegiatanRequest extends FormRequest
     public function rules(): array
     {
         return [
+            "registrasi_id" => ['required'],
             "nama_pic" => ['required'],
             "nomor_hp_pic" => ['required', 'numeric'],
-            "link_video" => [],
+            "video" => [''],
             "deskripsi" => ['required'],
             "foto" => ['required', 'file', 'mimes:jpg,jpeg,png'],
         ];

@@ -22,9 +22,9 @@ class PortalResource extends JsonResource
             'waktu_selesai' => $this->waktu_selesai,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'tahun_ajaran' => $this->tahun_ajaran,
-            'kelompok' => $this->kelompok,
-            'registrasi' => $this->registrasi
+            // 'tahun_ajaran' => $this->tahun_ajaran,
+            // 'kelompok' => $this->kelompok,
+            // 'registrasi' => $this->registrasi
         ];
     }
 }

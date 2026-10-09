@@ -5,8 +5,12 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegistrasiPortalRequest;
 use App\Http\Resources\RegistrasiResource;
+use App\Http\Resources\RegistrasiWithReportResource;
+use App\Models\Registrasi;
+use App\Models\RegistrasiAnggota;
 use App\Services\RegistrasiServices;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrasiController extends Controller
 {
@@ -48,7 +52,7 @@ class RegistrasiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return new RegistrasiWithReportResource($this->registrasiService->getRegistrasiById($id));
     }
 
     /**

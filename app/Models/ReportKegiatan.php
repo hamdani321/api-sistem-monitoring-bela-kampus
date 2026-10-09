@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Model;
 
 #[Table('report_kegiatan')]
-#[Fillable(['id', ''])]
+#[Fillable(['id', 'registrasi_id', 'nama_pic', 'nomor_hp_pic', 'foto', 'video', 'deskripsi'])]
 class ReportKegiatan extends Model
 {
     //

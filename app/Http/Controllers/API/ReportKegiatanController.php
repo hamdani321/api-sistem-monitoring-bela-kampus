@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreReportKegiatanRequest;
+use App\Services\ReportKegiatanServices;
 use Illuminate\Http\Request;
 
 class ReportKegiatanController extends Controller
 {
+
+    public function __construct(private ReportKegiatanServices $reportKegiatanServices) {}
     /**
      * Display a listing of the resource.
      */
@@ -26,9 +30,11 @@ class ReportKegiatanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreReportKegiatanRequest $request)
     {
-        return response($request->file());
+
+        $dataValid = $request->validated();
+        return response($this->reportKegiatanServices->createReportKegiatan($dataValid));
     }
 
     /**

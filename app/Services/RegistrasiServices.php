@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Registrasi;
+use App\Models\RegistrasiAnggota;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +20,11 @@ class RegistrasiServices
         }])->get();
     }
 
+    public function getRegistrasiById(string $id)
+    {
+        return Registrasi::with(['report_kegiatan'])->find($id);
+    }
+
     public function createRegistrasi(array $dataRegistrasi)
     {
         return DB::transaction(function () use ($dataRegistrasi) {
@@ -29,16 +35,18 @@ class RegistrasiServices
                 'nim_mahasiswa' => Auth::user()->load('mahasiswa')['mahasiswa']['nim'],
                 'tipe' => $dataRegistrasi['tipe'],
             ]);
-
-            if ($dataRegistrasi['tipe'] == "Kelompok") {
-                $dataKelompok = [
-                    "portal_id" => $dataRegistrasi['portal_id'],
+            $anggota = collect();
+            foreach ($dataRegistrasi['anggota_registrasi'] as $key => $value) {
+                $anggota->add([
                     'registrasi_id' => $registrasi->id,
-                    'nama' => $dataRegistrasi['nama_kelompok'],
-                    'nim_mahasiswa' => $registrasi->nim_mahasiswa,
-                ];
-                $this->kelompokService->createKelompok($dataKelompok);
-            }
+                    "nim_mahasiswa" => $value['nim'],
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            };
+
+            RegistrasiAnggota::insert($anggota->toArray());
+
             return $registrasi;
         });
     }

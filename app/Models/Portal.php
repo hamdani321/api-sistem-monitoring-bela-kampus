@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Http\Resources\PortalResource;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Attributes\UseResource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 #[Table("portal")]
 #[Fillable(["id", 'tahun_ajaran_id', 'waktu_mulai', 'waktu_selesai', 'created_at', 'updated_at'])]
+#[UseResource(PortalResource::class)]
 class Portal extends Model
 {
     public function scopePortal(Builder $query)
@@ -19,7 +22,7 @@ class Portal extends Model
 
         if ($user->hasRole('mahasiswa')) {
             return $query->with(['tahun_ajaran', 'registrasi' => function ($query) use ($user) {
-                return $query->where(["nim_mahasiswa" => $user->load('mahasiswa')['mahasiswa']['nim']]);
+                return $query->with(['registrasi_anggota'])->where(["nim_mahasiswa" => $user->load('mahasiswa')['mahasiswa']['nim']]);
             }])->get();
         }
 

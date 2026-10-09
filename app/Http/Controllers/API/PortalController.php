@@ -6,10 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegistrasiPortalRequest;
 use App\Http\Requests\StorePortalRequest;
 use App\Http\Resources\PortalResource;
+use App\Models\Mahasiswa;
 use App\Models\Portal;
+use App\Models\Registrasi;
+use App\Models\RegistrasiAnggota;
 use App\Models\Sekolah;
 use App\Services\PortalServices;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PortalController extends Controller
 {
@@ -17,7 +21,18 @@ class PortalController extends Controller
 
     public function index()
     {
-        return PortalResource::collection($this->portalService->getAllPortal());
+        $user =  Auth::user();
+        $mahasiswa = $user->load('mahasiswa');
+        $portal = Portal::where('waktu_mulai', '<=', now())->where('waktu_selesai', ">=", now())->first();
+        $registrasi = Registrasi::where(['nim_mahasiswa' => $mahasiswa['nim']])->first();
+        // $anggotaRegistrasi = RegistrasiAnggota::where(['registrasi_id' => $registrasi->id, "nim_mahasiswa" => $mahasiswa['nim']])->first();
+        return response(['data' => [
+            "portal" => $portal,
+            "registrasi" => $registrasi,
+            // "anggota_registrasi" => $anggotaRegistrasi
+        ]]);
+        // return new PortalResource($portal);
+        // return PortalResource::collection($this->portalService->getAllPortal());
     }
 
     /**
@@ -53,12 +68,14 @@ class PortalController extends Controller
             return $queryRegistrasi->with(['mahasiswa', 'sekolah', 'kelompok']);
         }])->find($id);
         $sekolah = Sekolah::get();
+        $mahasiswa = Mahasiswa::get();
         return response()->json([
             'success' => true,
             'message' => "Data portal ditemukan!",
             "data" => [
                 "portal" => $dataPortal,
-                "sekolah" => $sekolah
+                "sekolah" => $sekolah,
+                "mahasiswa" => $mahasiswa
             ]
         ]);
     }

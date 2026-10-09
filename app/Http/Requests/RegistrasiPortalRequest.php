@@ -28,7 +28,8 @@ class RegistrasiPortalRequest extends FormRequest
             'portal_id' => ['required'],
             'tipe' => ['required'],
             'sekolah_id' => ['required'],
-            "nama_kelompok" => ['required_if:tipe,Kelompok']
+            // "nama_kelompok" => ['required_if:tipe,Kelompok']
+            "anggota_registrasi" => ['required_if:tipe,Kelompok', 'array']
         ];
     }
 
@@ -37,7 +38,8 @@ class RegistrasiPortalRequest extends FormRequest
     {
         return [
             "*.required" => ":attribute tidak oleh kosong",
-            "nama_kelompok.required_if" => ":attribute wajib diisi jika registrasi berkelompok!"
+            "anggota_registrasi.required_if" => "masukan anggota kelompok jika tipe kegiatan adalah kelompok!"
+            // "nama_kelompok.required_if" => ":attribute wajib diisi jika registrasi berkelompok!"
         ];
     }
 
