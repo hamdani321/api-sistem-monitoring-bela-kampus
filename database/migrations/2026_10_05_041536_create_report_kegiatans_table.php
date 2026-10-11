@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('report_kegiatan', function (Blueprint $table) {
             $table->id();
             $table->integer('registrasi_id');
+            $table->integer('nim_mahasiswa')->comment("Mahasiswa yang membuat laporan!");
             $table->string('nama_pic');
             $table->string('nomor_hp_pic');
             $table->string('foto');

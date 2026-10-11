@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('registrasi_anggota', function (Blueprint $table) {
             $table->id();
             $table->integer('registrasi_id');
+            $table->integer('portal_id');
             $table->integer('nim_mahasiswa');
             $table->timestamps();
         });

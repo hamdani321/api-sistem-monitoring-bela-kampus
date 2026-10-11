@@ -22,17 +22,23 @@ class PortalController extends Controller
     public function index()
     {
         $user =  Auth::user();
-        $mahasiswa = $user->load('mahasiswa');
-        $portal = Portal::where('waktu_mulai', '<=', now())->where('waktu_selesai', ">=", now())->first();
-        $registrasi = Registrasi::where(['nim_mahasiswa' => $mahasiswa['nim']])->first();
-        // $anggotaRegistrasi = RegistrasiAnggota::where(['registrasi_id' => $registrasi->id, "nim_mahasiswa" => $mahasiswa['nim']])->first();
+        $mahasiswa = $user->load('mahasiswa')['mahasiswa'];
+        $portal = Portal::with(['tahun_ajaran'])->where('status', "AKTIF")->first();
+        if($portal == null) {
+            return response(['data' => [
+            "portal" => null,
+            "registrasi" => null,
+            "registrasi_anggota" => null
+        ]]);
+        }
+        // $portal = Portal::with(['tahun_ajaran'])->where('waktu_selesai', ">=", now())->first();
+        $registrasi = Registrasi::where(['nim_mahasiswa' => $mahasiswa['nim'] ?? 0, "portal_id" => $portal->id])->first();
+        $anggotaRegistrasi = RegistrasiAnggota::where(['portal_id' => $portal->id ?? 0, 'nim_mahasiswa' => $mahasiswa['nim'] ?? 0])->first();
         return response(['data' => [
             "portal" => $portal,
             "registrasi" => $registrasi,
-            // "anggota_registrasi" => $anggotaRegistrasi
+            "registrasi_anggota" => $anggotaRegistrasi
         ]]);
-        // return new PortalResource($portal);
-        // return PortalResource::collection($this->portalService->getAllPortal());
     }
 
     /**
@@ -65,7 +71,7 @@ class PortalController extends Controller
     public function show(string $id)
     {
         $dataPortal = Portal::with(['tahun_ajaran', 'registrasi' => function ($queryRegistrasi) {
-            return $queryRegistrasi->with(['mahasiswa', 'sekolah', 'kelompok']);
+            return $queryRegistrasi->with(['mahasiswa', 'registrasi_anggota', 'sekolah', 'kelompok']);
         }])->find($id);
         $sekolah = Sekolah::get();
         $mahasiswa = Mahasiswa::get();
@@ -73,10 +79,19 @@ class PortalController extends Controller
             'success' => true,
             'message' => "Data portal ditemukan!",
             "data" => [
-                "portal" => $dataPortal,
-                "sekolah" => $sekolah,
-                "mahasiswa" => $mahasiswa
+                'portal' => $dataPortal,
+                'sekolah' => $sekolah,
+                'mahasiswa' => $mahasiswa
             ]
+        ]);
+    }
+
+    public function get_portal_by_id(string $portalId) {
+        $portal = $this->portalService->getPortalById($portalId);
+        return response()->json([
+            'success' => true,
+            'message' => "Data portal ditemukan!",
+            "data" => $portal
         ]);
     }
 

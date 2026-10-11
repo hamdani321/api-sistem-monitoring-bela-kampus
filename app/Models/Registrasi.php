@@ -40,6 +40,6 @@ class Registrasi extends Model
 
     public function registrasi_anggota(): HasMany
     {
-        return $this->hasMany(RegistrasiAnggota::class, "id", 'registrasi_id');
+        return $this->hasMany(RegistrasiAnggota::class, "registrasi_id", 'id');
     }
 }

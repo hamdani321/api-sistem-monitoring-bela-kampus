@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('kode_prodi');
             $table->integer('kelas_id');
             $table->string("jenis_kelamin");
+            $table->string('foto', 255);
             $table->timestamps();
         });
     }

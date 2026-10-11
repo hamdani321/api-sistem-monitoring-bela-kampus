@@ -12,10 +12,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 
 #[Table("portal")]
-#[Fillable(["id", 'tahun_ajaran_id', 'waktu_mulai', 'waktu_selesai', 'created_at', 'updated_at'])]
+#[Fillable(["id", 'tahun_ajaran_id', 'waktu_mulai', 'waktu_selesai', 'status', 'created_at', 'updated_at'])]
 #[UseResource(PortalResource::class)]
 class Portal extends Model
 {
+    public const string ACTIVE = "AKTIF";
+    public const string NONACTIVE = "NONAKTIF";
+
     public function scopePortal(Builder $query)
     {
         $user = Auth::user();
@@ -25,7 +28,6 @@ class Portal extends Model
                 return $query->with(['registrasi_anggota'])->where(["nim_mahasiswa" => $user->load('mahasiswa')['mahasiswa']['nim']]);
             }])->get();
         }
-
         return $query->with(['tahun_ajaran', 'registrasi'])->get();
     }
 

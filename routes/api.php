@@ -6,6 +6,7 @@ use App\Http\Controllers\API\SekolahController;
 
 use App\Http\Controllers\API\MahasiswaController;
 use App\Http\Controllers\API\PortalController;
+use App\Http\Controllers\API\RegistrasiAnggotaController;
 use App\Http\Controllers\API\RegistrasiController;
 use App\Http\Controllers\API\ReportKegiatanController;
 use App\Http\Controllers\API\TahunAjaranController;
@@ -36,6 +37,7 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::resource('portal', PortalController::class);
     Route::get('/portal/{portalId}/kelompok/{kelompokI}', [PortalController::class, 'get_kelompok_portal']);
     Route::post('/portal/registrasi', [PortalController::class, 'registrasi_portal']);
+    Route::get("/portal/registrasi/{portalId}", [PortalController::class, "get_portal_by_id"]);
 
     //undangan
     Route::resource("undangan", UndanganController::class);
@@ -52,6 +54,9 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::resource("users", UsersController::class);
 
     Route::resource('report-kegiatan', ReportKegiatanController::class);
+
+    //Registrasi Anggota
+    Route::get('registrasi-anggota/{registrasiId}', [RegistrasiAnggotaController::class, 'get_anggota_registrasi']);
 
     //logout
     Route::post('/logout', [AuthController::class, 'logout']);

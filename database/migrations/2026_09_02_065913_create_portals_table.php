@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('tahun_ajaran_id');
             $table->timestamp('waktu_mulai');
             $table->timestamp('waktu_selesai');
+            $table->enum("status", ["AKTIF", "NONAKTIF"])->default("AKTIF");
             $table->timestamps();
         });
     }

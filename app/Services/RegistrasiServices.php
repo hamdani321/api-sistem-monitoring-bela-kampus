@@ -13,7 +13,7 @@ class RegistrasiServices
 
     public function getRegistrasi()
     {
-        return Registrasi::with(['sekolah', 'mahasiswa' => function ($queryMahasiswa) {
+        return Registrasi::with(['sekolah','registrasi_anggota', 'mahasiswa' => function ($queryMahasiswa) {
             return $queryMahasiswa->with(['prodi']);
         }, 'portal' => function ($queryPortal) {
             return $queryPortal->with(['tahun_ajaran']);
@@ -39,6 +39,7 @@ class RegistrasiServices
             foreach ($dataRegistrasi['anggota_registrasi'] as $key => $value) {
                 $anggota->add([
                     'registrasi_id' => $registrasi->id,
+                    'portal_id' => $dataRegistrasi['portal_id'],
                     "nim_mahasiswa" => $value['nim'],
                     'created_at' => now(),
                     'updated_at' => now()
