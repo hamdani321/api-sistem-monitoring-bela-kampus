@@ -21,17 +21,16 @@ class PortalController extends Controller
 
     public function index()
     {
-        $user =  Auth::user();
-        $mahasiswa = $user->load('mahasiswa')['mahasiswa'];
+        // $user =  Auth::user();
+        $mahasiswa = Auth::user()->load('mahasiswa')['mahasiswa'];
         $portal = Portal::with(['tahun_ajaran'])->where('status', "AKTIF")->first();
-        if($portal == null) {
+        if ($portal == null) {
             return response(['data' => [
-            "portal" => null,
-            "registrasi" => null,
-            "registrasi_anggota" => null
-        ]]);
+                "portal" => null,
+                "registrasi" => null,
+                "registrasi_anggota" => null
+            ]]);
         }
-        // $portal = Portal::with(['tahun_ajaran'])->where('waktu_selesai', ">=", now())->first();
         $registrasi = Registrasi::where(['nim_mahasiswa' => $mahasiswa['nim'] ?? 0, "portal_id" => $portal->id])->first();
         $anggotaRegistrasi = RegistrasiAnggota::where(['portal_id' => $portal->id ?? 0, 'nim_mahasiswa' => $mahasiswa['nim'] ?? 0])->first();
         return response(['data' => [
@@ -86,7 +85,8 @@ class PortalController extends Controller
         ]);
     }
 
-    public function get_portal_by_id(string $portalId) {
+    public function get_portal_by_id(string $portalId)
+    {
         $portal = $this->portalService->getPortalById($portalId);
         return response()->json([
             'success' => true,

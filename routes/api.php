@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\DashboardController;
 use App\Http\Controllers\API\KelompokController;
 use App\Http\Controllers\API\SekolahController;
 
@@ -23,6 +24,10 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::middleware("auth:sanctum")->group(function () {
+
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+
+    //Sekolah
     Route::resource("sekolah", SekolahController::class);
 
     //mahasiswa
@@ -53,6 +58,7 @@ Route::middleware("auth:sanctum")->group(function () {
     //users
     Route::resource("users", UsersController::class);
 
+    //Report Kegiatan
     Route::resource('report-kegiatan', ReportKegiatanController::class);
 
     //Registrasi Anggota
@@ -61,6 +67,5 @@ Route::middleware("auth:sanctum")->group(function () {
     //logout
     Route::post('/logout', [AuthController::class, 'logout']);
 });
-
 
 Route::post('/auth', [AuthController::class, 'auth']);

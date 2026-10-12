@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreReportKegiatanRequest;
+use App\Http\Resources\ReportKegiatanResource;
+use App\Models\ReportKegiatan;
 use App\Services\ReportKegiatanServices;
 use Illuminate\Http\Request;
 
@@ -42,7 +44,8 @@ class ReportKegiatanController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $reportKegiatan = ReportKegiatan::with(['mahasiswa'])->find($id);
+        return new ReportKegiatanResource($reportKegiatan);
     }
 
     /**
