@@ -27,6 +27,7 @@ class RegistrasiWithReportResource extends JsonResource
 
             //relasi
             "report_kegiatan" => $this->report_kegiatan,
+            'registrasi_anggota' => $this->registrasi_anggota
         ];
     }
 }

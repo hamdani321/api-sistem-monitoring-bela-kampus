@@ -40,6 +40,15 @@ class PortalController extends Controller
         ]]);
     }
 
+    public function get_data_portal(Request $request)
+    {
+        $portal = Portal::with(['tahun_ajaran'])->get();
+        return response([
+            'message' => "data ditemukan",
+            'data' => $portal
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -73,7 +82,11 @@ class PortalController extends Controller
             return $queryRegistrasi->with(['mahasiswa', 'registrasi_anggota', 'sekolah', 'kelompok']);
         }])->find($id);
         $sekolah = Sekolah::get();
-        $mahasiswa = Mahasiswa::get();
+        $mahasiswa = Mahasiswa::with(['registrasi' => function ($queryRegistrasi) use ($dataPortal) {
+            return $queryRegistrasi->where(['portal_id' => $dataPortal->id]);
+        }, 'registrasi_anggota' => function ($queryRegistrasiAnggota) use ($dataPortal) {
+            return $queryRegistrasiAnggota->where(['portal_id' => $dataPortal->id]);
+        }])->get();
         return response()->json([
             'success' => true,
             'message' => "Data portal ditemukan!",

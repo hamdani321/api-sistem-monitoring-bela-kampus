@@ -43,6 +43,7 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::get('/portal/{portalId}/kelompok/{kelompokI}', [PortalController::class, 'get_kelompok_portal']);
     Route::post('/portal/registrasi', [PortalController::class, 'registrasi_portal']);
     Route::get("/portal/registrasi/{portalId}", [PortalController::class, "get_portal_by_id"]);
+    Route::get('/data-portal', [PortalController::class, 'get_data_portal']);
 
     //undangan
     Route::resource("undangan", UndanganController::class);

@@ -10,4 +10,9 @@ class SekolahServices
     {
         return Sekolah::orderBy('nama', "ASC")->get();
     }
+
+    public function createSekolah(array $dataSekolah)
+    {
+        return Sekolah::create($dataSekolah);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSekolahRequest;
 use App\Http\Resources\SekolahResource;
 use App\Services\SekolahServices;
 use Illuminate\Http\Request;
@@ -29,9 +30,14 @@ class SekolahController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreSekolahRequest $request)
     {
-        //
+        $dataSekolah = $request->validated();
+        $sekolah = $this->sekolahServices->createSekolah($dataSekolah);
+        return response([
+            'message' => "Berhasil simpan sekolah!",
+            "data" => $sekolah
+        ]);
     }
 
     /**

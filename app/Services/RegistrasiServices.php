@@ -13,7 +13,7 @@ class RegistrasiServices
 
     public function getRegistrasi()
     {
-        return Registrasi::with(['sekolah','registrasi_anggota', 'mahasiswa' => function ($queryMahasiswa) {
+        return Registrasi::with(['sekolah', 'registrasi_anggota', 'mahasiswa' => function ($queryMahasiswa) {
             return $queryMahasiswa->with(['prodi']);
         }, 'portal' => function ($queryPortal) {
             return $queryPortal->with(['tahun_ajaran']);
@@ -22,7 +22,9 @@ class RegistrasiServices
 
     public function getRegistrasiById(string $id)
     {
-        return Registrasi::with(['report_kegiatan'])->find($id);
+        return Registrasi::with(['report_kegiatan', 'registrasi_anggota' => function ($queryRegistrasiAnggota) {
+            return $queryRegistrasiAnggota->with(['mahasiswa']);
+        }])->find($id);
     }
 
     public function createRegistrasi(array $dataRegistrasi)
