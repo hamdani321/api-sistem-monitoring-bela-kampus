@@ -22,7 +22,7 @@ class RegistrasiServices
 
     public function getRegistrasiById(string $id)
     {
-        return Registrasi::with(['report_kegiatan', 'registrasi_anggota' => function ($queryRegistrasiAnggota) {
+        return Registrasi::with(['mahasiswa', 'report_kegiatan', 'registrasi_anggota' => function ($queryRegistrasiAnggota) {
             return $queryRegistrasiAnggota->with(['mahasiswa']);
         }])->find($id);
     }

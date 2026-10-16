@@ -26,6 +26,7 @@ class RegistrasiWithReportResource extends JsonResource
             "updated_at" => $this->updated_at,
 
             //relasi
+            'mahasiswa' => $this->mahasiswa,
             "report_kegiatan" => $this->report_kegiatan,
             'registrasi_anggota' => $this->registrasi_anggota
         ];

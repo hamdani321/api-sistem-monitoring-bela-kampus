@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DashboardController;
+use App\Http\Controllers\API\KelasController;
 use App\Http\Controllers\API\KelompokController;
 use App\Http\Controllers\API\SekolahController;
 
 use App\Http\Controllers\API\MahasiswaController;
 use App\Http\Controllers\API\PortalController;
+use App\Http\Controllers\API\ProdiController;
 use App\Http\Controllers\API\RegistrasiAnggotaController;
 use App\Http\Controllers\API\RegistrasiController;
 use App\Http\Controllers\API\ReportKegiatanController;
@@ -64,6 +66,12 @@ Route::middleware("auth:sanctum")->group(function () {
 
     //Registrasi Anggota
     Route::get('registrasi-anggota/{registrasiId}', [RegistrasiAnggotaController::class, 'get_anggota_registrasi']);
+
+    //Kelas
+    Route::resource('kelas', KelasController::class);
+
+    //Prodi
+    Route::resource('prodi', ProdiController::class);
 
     //logout
     Route::post('/logout', [AuthController::class, 'logout']);

@@ -28,7 +28,8 @@ class RegistrasiResource extends JsonResource
             //relasi
             "mahasiswa" => $this->mahasiswa,
             'sekolah' => $this->sekolah,
-            'portal' => $this->portal
+            'portal' => $this->portal,
+            'registrasi_anggota' => $this->registrasi_anggota
         ];
     }
 }
