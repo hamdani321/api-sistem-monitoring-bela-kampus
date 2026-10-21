@@ -26,7 +26,7 @@ class StoreSekolahRequest extends FormRequest
     {
         return [
             'nama' => ['required'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:sekolah,email'],
             'alamat' => ['required'],
             'telepon' => ['required', 'numeric'],
             'latitude' => ['required'],
