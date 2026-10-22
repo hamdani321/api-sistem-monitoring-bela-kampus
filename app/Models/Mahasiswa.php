@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Table("mahasiswa")]
-#[Fillable(["id", 'nim', 'nama', 'email', 'kode_prodi', 'semester_id', 'jenis_k', 'kelas_id', 'status_study', 'jenjang_study', 'semester_awal', 'foto'])]
+#[Fillable(["id", "nama", 'email', 'nim', 'kode_prodi', 'kelas_id', 'jenis_kelamin', 'created_at', 'updated_at'])]
 class Mahasiswa extends Model
 {
     #[Scope]
