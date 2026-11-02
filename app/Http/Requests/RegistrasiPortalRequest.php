@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 // use Illuminate\Contracts\Validation\ValidationRule;
+
+use App\Models\Portal;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -23,7 +25,7 @@ class RegistrasiPortalRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
-    
+
 
     public function rules(): array
     {
@@ -31,6 +33,24 @@ class RegistrasiPortalRequest extends FormRequest
             'portal_id' => [
                 'required',
                 'exists:portal,id',
+                function ($attribute, $value, $fail) {
+                    $portal = Portal::find($value);
+                    if (!$portal) {
+                        return;
+                    }
+
+                    $waktuSekarang = now();
+                    $waktuMulai = \Carbon\Carbon::parse($portal->waktu_mulai);
+                    $waktuSelesai = \Carbon\Carbon::parse($portal->waktu_selesai);
+
+                    if ($waktuSekarang < $waktuMulai) {
+                        $fail('Registrasi belum dibuka!');
+                    }
+
+                    if ($waktuSekarang >= $waktuSelesai) {
+                        $fail('Waktu registrasi sudah lewat!');
+                    }
+                }
             ],
 
             'tipe' => [
@@ -57,7 +77,7 @@ class RegistrasiPortalRequest extends FormRequest
 
     // public function rules(): array
     // {
-        
+
     //     return [
     //         'portal_id' => ['required'],
     //         'tipe' => ['required'],
