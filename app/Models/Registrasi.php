@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use App\Policies\RegistrasiPolicy;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Attributes\UsePolicy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Table("registrasi")]
 #[Fillable(["id", 'portal_id', 'sekolah_id', 'nim_mahasiswa', 'tipe', 'status', 'created_at', 'updated_at'])]
-
+#[UsePolicy(RegistrasiPolicy::class)]
 class Registrasi extends Model
 {
     public function portal()
@@ -28,10 +30,7 @@ class Registrasi extends Model
         return $this->hasOne(Mahasiswa::class, 'nim', 'nim_mahasiswa');
     }
 
-    public function kelompok(): HasOne
-    {
-        return $this->hasOne(Kelompok::class, 'registrasi_id', 'id');
-    }
+
 
     public function report_kegiatan(): HasMany
     {

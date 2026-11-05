@@ -24,7 +24,10 @@ class ReportKegiatanResource extends JsonResource
             'video' => $this->video,
             "deskripsi" => $this->deskripsi,
             "created_at" => $this->created_at,
-            "updated_at" => $this->updated_at
+            "updated_at" => $this->updated_at,
+
+            //relasi
+            'mahasiswa' => $this->mahasiswa
         ];
         // return parent::toArray($request);
     }

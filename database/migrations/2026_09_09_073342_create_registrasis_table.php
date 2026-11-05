@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('portal_id');
             $table->integer("sekolah_id");
-            $table->integer('nim_mahasiswa');
+            $table->string('nim_mahasiswa');
             $table->enum('tipe', ["Individu", 'Kelompok']);
             $table->enum("status", ["Pending", "Approve"])->default("Pending");
             $table->timestamps();

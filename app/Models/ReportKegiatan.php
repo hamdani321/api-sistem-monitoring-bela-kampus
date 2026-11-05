@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Table('report_kegiatan')]
-#[Fillable(['id', 'registrasi_id', 'nim_mahasiswa', 'nama_pic', 'nomor_hp_pic', 'foto', 'video', 'deskripsi'])]
+#[Fillable(['id', 'registrasi_id', 'nim_mahasiswa', 'nama_pic', 'nomor_hp_pic', 'foto', 'video', 'deskripsi', 'created_at', 'updated_at'])]
 class ReportKegiatan extends Model
 {
     public function mahasiswa(): HasOne

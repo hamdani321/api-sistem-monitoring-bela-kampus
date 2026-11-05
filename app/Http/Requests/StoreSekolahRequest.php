@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Override;
 
 class StoreSekolahRequest extends FormRequest
@@ -25,10 +25,11 @@ class StoreSekolahRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'npsn' => ['required', 'numeric', 'unique:sekolah,npsn'],
             'nama' => ['required'],
             'email' => ['required', 'email', 'unique:sekolah,email'],
             'alamat' => ['required'],
-            'telepon' => ['required', 'numeric'],
+            'telepon' => ['numeric'],
             'latitude' => ['required'],
             'longitude' => ['required'],
         ];
@@ -40,7 +41,9 @@ class StoreSekolahRequest extends FormRequest
         // return parent::messages();
         return [
             "*.required" => ":attribute tidak boleh kosong!",
-            'email.email' => ":attribute harus berupa email!"
+            'email.email' => ":attribute harus berupa email!",
+            "*.unique" => ":attribute sudah digunakan",
+            '*.numeric' => ":attribute harus berupa angka!"
         ];
     }
 }

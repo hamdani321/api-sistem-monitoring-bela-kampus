@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nomor_hp_pic');
             $table->string('foto');
             $table->string('video')->nullable();
-            $table->text("deskrispi");
+            $table->text("deskripsi");
             $table->timestamps();
         });
     }

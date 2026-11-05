@@ -14,7 +14,7 @@ class StoreMahasiswaRequest extends FormRequest
     public function authorize(): bool
     {
         // return false;
-        return Auth::user() != null;
+        return Auth::user() != null && Auth::user()->hasRole("admin");
     }
 
     /**

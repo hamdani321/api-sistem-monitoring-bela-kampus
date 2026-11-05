@@ -12,10 +12,10 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $data = $this->dashboardServices->getDataDashboard();
-        return response([
-            'message' => "Data berhasil didapatkan!",
-            'data' => $data
-        ]);
+        return $this->dashboardServices->getDataDashboard();
+        // return response([
+        //     'message' => "Data berhasil didapatkan!",
+        //     'data' => $data
+        // ]);
     }
 }

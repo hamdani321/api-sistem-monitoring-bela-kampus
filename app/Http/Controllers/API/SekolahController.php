@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSekolahRequest;
+use App\Http\Requests\UpdateSekolahRequest;
 use App\Http\Resources\SekolahResource;
+use App\Models\Sekolah;
 use App\Services\SekolahServices;
 use Illuminate\Http\Request;
 
@@ -22,10 +24,10 @@ class SekolahController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+    // public function create()
+    // {
+    //     //
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -45,23 +47,23 @@ class SekolahController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return $this->sekolahServices->findSekolah($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    // public function edit(string $id)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateSekolahRequest $request, string $id)
     {
-        //
+        return $this->sekolahServices->updateSekolah($request->validated(), $id);
     }
 
     /**

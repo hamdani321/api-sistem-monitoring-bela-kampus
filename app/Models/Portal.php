@@ -36,11 +36,6 @@ class Portal extends Model
         return $this->belongsTo(TahunAjaran::class);
     }
 
-    public function kelompok(): HasMany
-    {
-        return $this->hasMany(Kelompok::class, 'portal_id', 'id');
-    }
-
     public function registrasi(): HasMany
     {
         return $this->hasMany(Registrasi::class, 'portal_id', 'id');

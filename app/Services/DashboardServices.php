@@ -11,9 +11,12 @@ class DashboardServices
     {
         $portal = Portal::with(['tahun_ajaran'])->get();
         $registrasi = Registrasi::get();
-        return [
-            "portal" => $portal,
-            'registarsi' => $registrasi
-        ];
+        return response([
+            'message' => "Berhasil ambil data portal",
+            "data" => [
+                "portal" => $portal,
+                'registrasi' => $registrasi
+            ]
+        ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 // use Illuminate\Contracts\Validation\ValidationRule;
 
 use App\Models\Portal;
+use App\Models\Registrasi;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -26,7 +27,6 @@ class RegistrasiPortalRequest extends FormRequest
      * @return array<string, ValidationRule|array<mixed>|string>
      */
 
-
     public function rules(): array
     {
         return [
@@ -36,7 +36,7 @@ class RegistrasiPortalRequest extends FormRequest
                 function ($attribute, $value, $fail) {
                     $portal = Portal::find($value);
                     if (!$portal) {
-                        return;
+                        $fail("Portal tidak tersedia!");
                     }
 
                     $waktuSekarang = now();
@@ -60,6 +60,13 @@ class RegistrasiPortalRequest extends FormRequest
 
             'sekolah_id' => [
                 'required',
+                function ($attribute, $value, $fail) {
+                    $registrasi = Registrasi::where(['portal_id' => $this->input('portal_id'), 'sekolah_id' => $value])->first();
+                    if ($registrasi) { {
+                            $fail("Sekolah sudah digunakan oleh registrasi lain!");
+                        }
+                    }
+                }
             ],
 
             'anggota_registrasi' => [
@@ -75,20 +82,6 @@ class RegistrasiPortalRequest extends FormRequest
         ];
     }
 
-    // public function rules(): array
-    // {
-
-    //     return [
-    //         'portal_id' => ['required'],
-    //         'tipe' => ['required'],
-    //         'sekolah_id' => ['required'],
-    //         "anggota_registrasi" => ['required_if:tipe,Kelompok', 'array'],
-    //         'anggota_registrasi.*' => ['required','distinct',
-    //             Rule::unique('registrasi_anggota', 'nim_mahasiswa'),
-    //         ],
-    //     ];
-    // }
-
     #[Override]
     public function messages()
     {
@@ -98,7 +91,6 @@ class RegistrasiPortalRequest extends FormRequest
             "anggota_registrasi.*.nim.unique" => "Mahasiswa dengan :attribute :input sudah terdaftar di registrasi lain!"
         ];
     }
-
 
     #[Override]
     public function attributes()

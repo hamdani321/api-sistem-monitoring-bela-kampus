@@ -3,15 +3,14 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Registrasi;
 use App\Services\RegistrasiAnggotaServices;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class RegistrasiAnggotaController extends Controller
 {
-
-public function __construct(private RegistrasiAnggotaServices $registrasiAnggota)
-{
-}
+    public function __construct(private RegistrasiAnggotaServices $registrasiAnggota) {}
     /**
      * Display a listing of the resource.
      */
@@ -20,19 +19,20 @@ public function __construct(private RegistrasiAnggotaServices $registrasiAnggota
         //
     }
 
-    public function get_anggota_registrasi(string $registrasiId) {
-
-        return response(['data' => $this->registrasiAnggota->getAnggotaRegistrasiById($registrasiId)]);
-
+    public function get_anggota_registrasi(Request $request, Registrasi $registrasiId)
+    {
+        // return response(['data' => $registrasiId]);
+        $this->authorize('view', $registrasiId);
+        return $this->registrasiAnggota->getAnggotaRegistrasiById($registrasiId->id);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+    // public function create()
+    // {
+    //     //
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -53,10 +53,10 @@ public function __construct(private RegistrasiAnggotaServices $registrasiAnggota
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    // public function edit(string $id)
+    // {
+    //     //
+    // }
 
     /**
      * Update the specified resource in storage.
