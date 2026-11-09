@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MahasiswaRequest;
 use App\Http\Resources\Mahasiswa\MahasiswaInvitationResource;
 use App\Http\Resources\Mahasiswa\MahasiswaResource;
 use App\Models\Mahasiswa;
@@ -38,9 +39,9 @@ class MahasiswaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(MahasiswaRequest $request)
     {
-        //
+        return $this->mahasiswaService->createMahasiswa($request->validated());
     }
 
     /**

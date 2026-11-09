@@ -3,16 +3,20 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Services\ProdiServices;
 use Illuminate\Http\Request;
 
 class ProdiController extends Controller
 {
+
+    public function __construct(private ProdiServices $prodiServices) {}
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+
+        return $this->prodiServices->getProdi();
     }
 
     /**
