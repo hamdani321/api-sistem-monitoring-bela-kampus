@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class RegistrasiServices
 {
-    public function __construct(private KelompokServices $kelompokService) {}
 
     public function getRegistrasi()
     {

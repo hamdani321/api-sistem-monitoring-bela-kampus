@@ -1787,7 +1787,20 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kuok, Kabupaten Kampar, Riau',
             ],
         ];
-
-        Sekolah::insert($dataSekolah);
+        $sekolahStore = [];
+        foreach ($dataSekolah as $key=> $item) {
+            $sekolahStore[] = [
+                'nama' => $item['nama'],
+                'npsn' => $key,
+                'telepon' => $item['telepon'],
+                'email' => $item['email'],
+                'latitude' => $item['latitude'],
+                'longitude' => $item['longitude'],
+                'created_at' => now(),
+                'updated_at' => now(),
+                'alamat' => $item['alamat'],
+            ];
+        }
+        Sekolah::insert($sekolahStore);
     }
 }

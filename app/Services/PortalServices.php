@@ -20,7 +20,7 @@ class PortalServices
                 "portal" => null,
                 "registrasi" => null,
                 "registrasi_anggota" => null
-            ]]);
+            ]], 404);
         }
         $registrasi = Registrasi::where(['nim_mahasiswa' => $mahasiswa['nim'] ?? 0, "portal_id" => $portal->id])->first();
         $anggotaRegistrasi = RegistrasiAnggota::where(['portal_id' => $portal->id ?? 0, 'nim_mahasiswa' => $mahasiswa['nim'] ?? 0])->first();

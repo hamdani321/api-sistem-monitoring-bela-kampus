@@ -30,10 +30,6 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::apiResource('mahasiswa', MahasiswaController::class);
     Route::get('/mahasiswa/invitation/{kelompokId}', [MahasiswaController::class, "get_mahasiswa_invitation"]);
 
-    //kelompok
-    // Route::resource("kelompok", KelompokController::class);
-    // Route::post('kelompok/invite-group', [KelompokController::class, "invite_group"]);
-
     //portal
     // Route::resource('portal', PortalController::class);
     Route::apiResource('portal', PortalController::class);
@@ -41,11 +37,6 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::post('/portal/registrasi', [PortalController::class, 'registrasi_portal']);
     Route::get("/portal/registrasi/{portalId}", [PortalController::class, "get_portal_by_id"]);
     Route::get('/data-portal', [PortalController::class, 'get_data_portal']);
-
-    //undangan
-    // Route::resource("undangan", UndanganController::class);
-    // Route::get('undangan/mahasiswa/{kelompokId}', [UndanganController::class, "undangan_by_kelompok"]);
-    // Route::post('undangan/accept-join-group', [UndanganController::class, "accept_join_group"]);
 
     //registrasi
     // Route::resource('registrasi', RegistrasiController::class);
