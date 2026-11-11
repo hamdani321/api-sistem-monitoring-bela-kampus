@@ -30,8 +30,6 @@ class Registrasi extends Model
         return $this->hasOne(Mahasiswa::class, 'nim', 'nim_mahasiswa');
     }
 
-
-
     public function report_kegiatan(): HasMany
     {
         return $this->hasMany(ReportKegiatan::class, 'registrasi_id', 'id');

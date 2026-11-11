@@ -40,7 +40,7 @@ class PortalServices
     {
         $user = Auth::user();
         $dataPortal = Portal::with(['tahun_ajaran', 'registrasi' => function ($queryRegistrasi) use ($user) {
-            return $queryRegistrasi->with(['mahasiswa', 'registrasi_anggota', 'sekolah', 'kelompok'])
+            return $queryRegistrasi->with(['mahasiswa', 'registrasi_anggota', 'sekolah'])
                 ->where("nim_mahasiswa", $user->load('mahasiswa')['mahasiswa']['nim']);
         }])->find($portalId);
         $sekolah = Sekolah::get();
