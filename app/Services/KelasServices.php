@@ -8,6 +8,9 @@ class KelasServices
 {
     public function getKelas()
     {
-        return Kelas::get();
+        return response([
+            'data' =>Kelas::with(['prodi'])->get()
+        ]);
+        // return Kelas::get();
     }
 }

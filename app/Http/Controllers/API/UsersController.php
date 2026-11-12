@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use App\Models\User;
 use App\Services\UsersServices;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,10 @@ class UsersController extends Controller
             'user' => $request->user()->load('mahasiswa'),
             'roles' => $request->user()->getRoleNames()
         ]);
+    }
+
+    public function reset_password(string $userId) {
+        return $this->usersService->resetPassword($userId);
     }
 
     /**

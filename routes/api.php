@@ -49,6 +49,7 @@ Route::middleware("auth:sanctum")->group(function () {
     //users
     // Route::resource("users", UsersController::class);
     Route::apiResource('users', UsersController::class);
+    Route::put('/users/reset-password/{userId}', [UsersController::class, 'reset_password']);
 
     //Report Kegiatan
     // Route::resource('report-kegiatan', ReportKegiatanController::class);

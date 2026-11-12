@@ -4,8 +4,10 @@ namespace App\Services;
 
 use App\Models\Registrasi;
 use App\Models\RegistrasiAnggota;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class RegistrasiServices
 {
@@ -51,5 +53,18 @@ class RegistrasiServices
 
             return $registrasi;
         });
+    }
+
+    public function acceptRegistrasi(string $registrasiId) {
+        $registrasi = Registrasi::find($registrasiId);
+        if($registrasi) {
+            $registrasi->status = "Approve";
+            $registrasi->save();
+            return response([
+                'message' => "Berhasil approve registrasi!",
+                'data' => $registrasi
+            ], Response::HTTP_OK);
+        }
+        throw new HttpException( 404, "Data registrasi tidak ditemukan!");
     }
 }

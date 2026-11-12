@@ -14,9 +14,10 @@ class KelasController extends Controller
      */
     public function index()
     {
-        return response([
-            "data" => $this->kelasServices->getKelas()
-        ]);
+        return $this->kelasServices->getKelas();
+        // return response([
+        //     "data" => 
+        // ]);
     }
 
     /**
