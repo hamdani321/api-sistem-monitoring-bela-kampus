@@ -11,7 +11,6 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class RegistrasiServices
 {
-
     public function getRegistrasi()
     {
         return Registrasi::with(['sekolah', 'registrasi_anggota', 'mahasiswa' => function ($queryMahasiswa) {
@@ -55,9 +54,10 @@ class RegistrasiServices
         });
     }
 
-    public function acceptRegistrasi(string $registrasiId) {
+    public function acceptRegistrasi(string $registrasiId)
+    {
         $registrasi = Registrasi::find($registrasiId);
-        if($registrasi) {
+        if ($registrasi) {
             $registrasi->status = "Approve";
             $registrasi->save();
             return response([
@@ -65,6 +65,6 @@ class RegistrasiServices
                 'data' => $registrasi
             ], Response::HTTP_OK);
         }
-        throw new HttpException( 404, "Data registrasi tidak ditemukan!");
+        throw new HttpException(404, "Data registrasi tidak ditemukan!");
     }
 }

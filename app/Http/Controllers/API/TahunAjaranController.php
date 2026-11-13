@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTahunAjaranRequest;
+use App\Http\Requests\TahunAjaranRequest;
 use App\Http\Resources\TahunAjaranResource;
 use App\Services\TahunAjaranServices;
 use Illuminate\Http\Request;
@@ -31,7 +31,7 @@ class TahunAjaranController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTahunAjaranRequest $request)
+    public function store(TahunAjaranRequest $request)
     {
         $dataValid = $request->validated();
         $tahunAjaran = $this->tahunAjaranService->createTahunAjaran($dataValid);
@@ -49,17 +49,17 @@ class TahunAjaranController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    // public function edit(string $id)
-    // {
-    //     //
-    // }
+    public function edit(string $id)
+    {
+        return $this->tahunAjaranService->findTahunAjaran($id);
+    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TahunAjaranRequest $request, string $id)
     {
-        //
+        return $this->tahunAjaranService->editTahunAjaran($id, $request->validated());
     }
 
     /**

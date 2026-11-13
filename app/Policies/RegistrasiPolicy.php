@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\Registrasi;
+use App\Models\RegistrasiAnggota;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
@@ -21,9 +22,9 @@ class RegistrasiPolicy
      */
     public function view(User $user, Registrasi $registrasi): bool
     {
-        // return false;
         $mahasiswa = $user->load('mahasiswa')['mahasiswa'];
-        return $registrasi->nim_mahasiswa == $mahasiswa['nim'];
+        $registrasiAnggota = RegistrasiAnggota::where(['registrasi_id' => $registrasi->id, 'nim_mahasiswa' => $mahasiswa['nim']])->first();
+        return $registrasi->nim_mahasiswa == $mahasiswa['nim'] || $registrasiAnggota != null;
     }
 
     /**

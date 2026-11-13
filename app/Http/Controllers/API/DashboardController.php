@@ -10,12 +10,13 @@ class DashboardController extends Controller
 {
     public function __construct(private DashboardServices $dashboardServices) {}
 
-    public function index()
+    public function dashboard_admin()
     {
-        return $this->dashboardServices->getDataDashboard();
-        // return response([
-        //     'message' => "Data berhasil didapatkan!",
-        //     'data' => $data
-        // ]);
+        return $this->dashboardServices->dashboardAdmin();
+    }
+
+    public function dashboard_mahasiswa()
+    {
+        return $this->dashboardServices->dashboardMahasiswa();
     }
 }

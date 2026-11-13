@@ -19,7 +19,8 @@ Route::get('/user', [UsersController::class, 'user'])->middleware('auth:sanctum'
 
 Route::middleware("auth:sanctum")->group(function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard-admin', [DashboardController::class, 'dashboard_admin']);
+    Route::get('/dashboard-mahasiswa', [DashboardController::class, 'dashboard_mahasiswa']);
 
     //Sekolah
     // Route::resource("sekolah", SekolahController::class);
@@ -56,7 +57,7 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::apiResource("report-kegiatan", ReportKegiatanController::class);
 
     //Registrasi Anggota
-    Route::get('registrasi-anggota/{registrasiId}', [RegistrasiAnggotaController::class, 'get_anggota_registrasi']);
+    Route::get('registrasi-anggota/{registrasi}', [RegistrasiAnggotaController::class, 'get_anggota_registrasi']);
 
     //Kelas
     // Route::resource('kelas', KelasController::class);

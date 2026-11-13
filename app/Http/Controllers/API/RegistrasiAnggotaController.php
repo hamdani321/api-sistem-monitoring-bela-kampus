@@ -19,11 +19,11 @@ class RegistrasiAnggotaController extends Controller
         //
     }
 
-    public function get_anggota_registrasi(Request $request, Registrasi $registrasiId)
+    public function get_anggota_registrasi(Request $request, Registrasi $registrasi)
     {
         // return response(['data' => $registrasiId]);
-        $this->authorize('view', $registrasiId);
-        return $this->registrasiAnggota->getAnggotaRegistrasiById($registrasiId->id);
+        $this->authorize('view', $registrasi);
+        return $this->registrasiAnggota->getAnggotaRegistrasiById($registrasi->id);
     }
 
     /**

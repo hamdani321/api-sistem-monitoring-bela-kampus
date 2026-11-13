@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Override;
 
-class StoreTahunAjaranRequest extends FormRequest
+class TahunAjaranRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
