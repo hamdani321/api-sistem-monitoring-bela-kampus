@@ -2,9 +2,11 @@
 
 namespace App\Policies;
 
+use App\Models\Registrasi;
+use App\Models\RegistrasiAnggota;
 use App\Models\ReportKegiatan;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\Auth;
 
 class ReportKegiatanPolicy
 {
@@ -21,7 +23,20 @@ class ReportKegiatanPolicy
      */
     public function view(User $user, ReportKegiatan $reportKegiatan): bool
     {
-        return false;
+        $mahasiswa = $user->load('mahasiswa')['mahasiswa'] ?? null;
+        $registrasi = Registrasi::find($reportKegiatan->registrasi_id);
+        $registrasiAnggota = RegistrasiAnggota::where(['registrasi_id' => $reportKegiatan->registrasi_id, "nim_mahasiswa" => $mahasiswa['nim'] ?? 0])->first();
+        // return $registrasi->nim_mahasiswa == $mahasiswa['nim'];
+        if ($user->hasRole('admin')) {
+            return true;
+        } else if ($mahasiswa != null && $registrasi->nim_mahasiswa == $mahasiswa['nim']) {
+            return true;
+        } else if ($registrasiAnggota != null) {
+            return true;
+        } else {
+            return false;
+        }
+        // return $user->hasRole('admin') || $registrasi->nim == $mahasiswa['nim'] || $registrasiAnggota != null;
     }
 
     /**

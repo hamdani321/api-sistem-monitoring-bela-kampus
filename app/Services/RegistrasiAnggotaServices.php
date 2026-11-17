@@ -14,7 +14,9 @@ class RegistrasiAnggotaServices
             return $queryPortal->with(['tahun_ajaran']);
         }, 'registrasi_anggota' => function ($queryRegistrasiAnggota) {
             return $queryRegistrasiAnggota->with(['mahasiswa']);
-        }, 'sekolah', 'report_kegiatan'])->find($registrasiId);
+        }, 'sekolah', 'report_kegiatan' => function ($queryReportKegiatan) {
+            return $queryReportKegiatan->with(['mahasiswa']);
+        }])->find($registrasiId);
 
         return response(['message' => "Berhasil mengambil data registrasi!", 'data' => $registrasi]);
     }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DashboardController;
+use App\Http\Controllers\API\KegiatanLaporanController;
 use App\Http\Controllers\API\KelasController;
 use App\Http\Controllers\API\SekolahController;
 
@@ -66,6 +67,9 @@ Route::middleware("auth:sanctum")->group(function () {
     //Prodi
     // Route::resource('prodi', ProdiController::class);
     Route::apiResource("prodi", ProdiController::class);
+
+    //Kegiatan laporan
+    Route::apiResource("kegiatan-laporan", KegiatanLaporanController::class);
 
     //logout
     Route::post('/logout', [AuthController::class, 'logout']);

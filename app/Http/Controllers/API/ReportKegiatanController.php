@@ -44,6 +44,8 @@ class ReportKegiatanController extends Controller
      */
     public function show(string $id)
     {
+        $reportKegiatan = ReportKegiatan::find($id);
+        $this->authorize('view', $reportKegiatan);
         $reportKegiatan = ReportKegiatan::with(['mahasiswa'])->find($id);
         return new ReportKegiatanResource($reportKegiatan);
     }
