@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Illuminate\Support\Str;
 
 class RegistrasiServices
 {
@@ -32,6 +33,7 @@ class RegistrasiServices
         return DB::transaction(function () use ($dataRegistrasi) {
 
             $registrasi = Registrasi::create([
+                "id" => Str::uuid(),
                 'portal_id' => $dataRegistrasi['portal_id'],
                 'sekolah_id' => $dataRegistrasi['sekolah_id'],
                 'nim_mahasiswa' => Auth::user()->load('mahasiswa')['mahasiswa']['nim'],
@@ -40,6 +42,7 @@ class RegistrasiServices
             $anggota = collect();
             foreach ($dataRegistrasi['anggota_registrasi'] as $key => $value) {
                 $anggota->add([
+                    "id" => Str::uuid(),
                     'registrasi_id' => $registrasi->id,
                     'portal_id' => $dataRegistrasi['portal_id'],
                     "nim_mahasiswa" => $value['nim'],

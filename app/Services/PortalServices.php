@@ -7,7 +7,11 @@ use App\Models\Portal;
 use App\Models\Registrasi;
 use App\Models\RegistrasiAnggota;
 use App\Models\Sekolah;
+use Exception;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class PortalServices
 {
@@ -29,6 +33,32 @@ class PortalServices
             "registrasi" => $registrasi,
             "registrasi_anggota" => $anggotaRegistrasi
         ]]);
+    }
+
+    public function activatePortal(string $portalId)
+    {
+        DB::beginTransaction();
+        try {
+            $portal = Portal::find($portalId);
+            if ($portal->status == Portal::ACTIVE) {
+                $portal->status = Portal::NONACTIVE;
+                $portal->save();
+                DB::commit();
+                return response(['message' => "Berhasil nonaktifkan portal!", 'data' => $portal]);
+            }
+            $portalActive = Portal::where('status', Portal::ACTIVE)->first();
+            if ($portalActive) {
+                return response(['message' => "Saat ini sedang ada portal yang aktif!"], Response::HTTP_UNPROCESSABLE_ENTITY);
+            } else {
+                $portal->status = Portal::ACTIVE;
+                $portal->save();
+                DB::commit();
+                return response(['message' => "Berhasil aktifkan portal!"], Response::HTTP_OK);
+            }
+        } catch (Exception $ex) {
+            DB::rollBack();
+            return response(['message' => $ex->getMessage()], Response::HTTP_BAD_REQUEST);
+        }
     }
 
     public function getAllPortal()
@@ -59,6 +89,7 @@ class PortalServices
 
     public function createPortal(array $dataPortal)
     {
+        $dataPortal['id'] = Str::uuid();
         $portal = Portal::create($dataPortal);
 
         return response()->json([

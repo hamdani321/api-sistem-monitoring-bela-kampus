@@ -48,6 +48,9 @@ class MahasiswaRequest extends FormRequest
                 'required',
                 'in:Laki-Laki,Perempuan'
             ],
+            // 'username' => [
+            //     "required"
+            // ],
             'password' => [
                 'required',
                 'confirmed'

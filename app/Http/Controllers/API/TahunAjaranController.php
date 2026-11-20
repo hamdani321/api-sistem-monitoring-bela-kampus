@@ -28,14 +28,15 @@ class TahunAjaranController extends Controller
     //     //
     // }
 
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(TahunAjaranRequest $request)
     {
         $dataValid = $request->validated();
-        $tahunAjaran = $this->tahunAjaranService->createTahunAjaran($dataValid);
-        return response()->json(["message" => "Berhasil simpan data!", "data" => $tahunAjaran], 201);
+        return $this->tahunAjaranService->createTahunAjaran($dataValid);
+        // return response()->json(["message" => "Berhasil simpan data!", "data" => $tahunAjaran], 201);
     }
 
     /**
@@ -43,7 +44,7 @@ class TahunAjaranController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return $this->tahunAjaranService->findTahunAjaran($id);
     }
 
     /**

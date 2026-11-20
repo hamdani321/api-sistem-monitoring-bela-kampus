@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegistrasiPortalRequest;
-use App\Http\Requests\StorePortalRequest;
+use App\Http\Requests\PortalRequest;
 use App\Models\Mahasiswa;
 use App\Models\Portal;
 use App\Models\Sekolah;
@@ -43,12 +43,18 @@ class PortalController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePortalRequest $request)
+    public function store(PortalRequest $request)
     {
         return $this->portalService->createPortal($request->validated());
     }
 
-    public function registrasi_portal(RegistrasiPortalRequest $request) {}
+    // public function registrasi_portal(RegistrasiPortalRequest $request) {}
+
+    public function activate_portal(string $portalId)
+    {
+        return $this->portalService->activatePortal($portalId);
+    }
+
 
     /**
      * Display the specified resource.

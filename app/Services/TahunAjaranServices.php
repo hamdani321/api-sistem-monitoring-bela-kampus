@@ -3,8 +3,10 @@
 namespace App\Services;
 
 use App\Models\TahunAjaran;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Illuminate\Support\Str;
 
 class TahunAjaranServices
 {
@@ -13,9 +15,11 @@ class TahunAjaranServices
         return TahunAjaran::get();
     }
 
-    public function createTahunAjaran(array $data): TahunAjaran
+    public function createTahunAjaran(array $data): JsonResponse
     {
-        return TahunAjaran::create($data);
+        $data['id'] = Str::uuid();
+        $tahunAjaran = TahunAjaran::create($data);
+        return response()->json(["message" => "Berhasil simpan data tahun ajaran!", "data" => $tahunAjaran], 201);
     }
 
     public function findTahunAjaran(string $id)

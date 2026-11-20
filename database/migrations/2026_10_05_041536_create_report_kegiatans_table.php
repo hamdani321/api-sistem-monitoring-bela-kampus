@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('report_kegiatan', function (Blueprint $table) {
-            $table->id();
+            $table->uuid("id")->primary()->unique();
             $table->integer('registrasi_id');
             $table->integer('nim_mahasiswa')->comment("Mahasiswa yang membuat laporan!");
             $table->string('nama_pic');

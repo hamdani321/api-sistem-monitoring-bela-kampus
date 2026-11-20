@@ -1593,6 +1593,7 @@ class UserSeeder extends Seeder
             ['email' => 'zulfikri2021.tps@students.poltek-kampar.ac.id', 'name' => 'Zulfikri', 'password' => Hash::make('123456'), 'created_at' => now(), 'updated_at' => now(),],
             ['email' => 'zulkifli2021.tif@students.poltek-kampar.ac.id', 'name' => 'Zulkifli', 'password' => Hash::make('123456'), 'created_at' => now(), 'updated_at' => now(),],
         ];
+
         User::insert($users);
     }
 }

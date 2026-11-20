@@ -39,6 +39,7 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::post('/portal/registrasi', [PortalController::class, 'registrasi_portal']);
     Route::get("/portal/registrasi/{portalId}", [PortalController::class, "get_portal_by_id"]);
     Route::get('/data-portal', [PortalController::class, 'get_data_portal']);
+    Route::put("portal/activate/{portalid}", [PortalController::class, 'activate_portal']);
 
     //registrasi
     // Route::resource('registrasi', RegistrasiController::class);

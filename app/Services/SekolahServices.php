@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Http\Resources\SekolahResource;
 use App\Models\Sekolah;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 
 class SekolahServices
 {
@@ -15,6 +16,7 @@ class SekolahServices
 
     public function createSekolah(array $dataSekolah)
     {
+        $dataSekolah['id'] = Str::uuid();
         return Sekolah::create($dataSekolah);
     }
 

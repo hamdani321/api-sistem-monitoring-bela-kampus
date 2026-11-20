@@ -14,6 +14,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 #[Fillable(["id", "nama", 'email', 'nim', 'kode_prodi', 'kelas_id', 'jenis_kelamin', 'created_at', 'updated_at'])]
 class Mahasiswa extends Model
 {
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
+
     #[Scope]
     public function scopeMahasiswa(Builder $query)
     {

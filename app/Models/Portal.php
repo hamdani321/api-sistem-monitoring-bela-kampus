@@ -11,11 +11,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 
-#[Table("portal")]
+#[Table("portal", 'id', 'string', false)]
 #[Fillable(["id", 'tahun_ajaran_id', 'waktu_mulai', 'waktu_selesai', 'status', 'created_at', 'updated_at'])]
 #[UseResource(PortalResource::class)]
 class Portal extends Model
 {
+
     public const string ACTIVE = "AKTIF";
     public const string NONACTIVE = "NONAKTIF";
 

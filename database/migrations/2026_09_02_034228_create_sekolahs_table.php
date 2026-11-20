@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sekolah', function (Blueprint $table) {
-            $table->id();
-            $table->integer('npsn')->unique();
+            $table->uuid("id")->primary()->unique();
+            $table->string('npsn')->unique();
             $table->string('nama');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('alamat');
             $table->string('telepon');
             $table->string('latitude');

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('portal', function (Blueprint $table) {
-            $table->id();
+            $table->uuid("id")->primary()->unique();
             $table->integer('tahun_ajaran_id');
             $table->timestamp('waktu_mulai');
             $table->timestamp('waktu_selesai');

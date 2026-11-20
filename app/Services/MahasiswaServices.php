@@ -8,7 +8,7 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class MahasiswaServices
 {
@@ -28,6 +28,7 @@ class MahasiswaServices
         try {
 
             $newMahasiswa = Mahasiswa::create([
+                "id" => Str::uuid(),
                 "nama" => $mahasiswa['nama'],
                 'email' => $mahasiswa['email'],
                 'nim' => $mahasiswa['nim'],
@@ -45,7 +46,7 @@ class MahasiswaServices
             return response(['message' => 'Berhasil tambah mahasiswa', 'data' => new MahasiswaResource($newMahasiswa)], Response::HTTP_CREATED);
         } catch (Exception $exception) {
             DB::rollBack();
-            return response(['message' => $exception->getMessage()], 500);
+            return response(['message' => $exception->getMessage()], 403);
         }
     }
 }

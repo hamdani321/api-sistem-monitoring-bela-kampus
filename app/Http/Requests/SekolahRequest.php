@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Override;
 
-class StoreSekolahRequest extends FormRequest
+class SekolahRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

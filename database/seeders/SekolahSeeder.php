@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Sekolah;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class SekolahSeeder extends Seeder
 {
@@ -14,9 +15,9 @@ class SekolahSeeder extends Seeder
     public function run(): void
     {
 
-
         $dataSekolah = [
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Bangkinang',
                 'telepon' => '(0761) 32145',
                 'email' => 'sman1bkn_official@sch.id',
@@ -27,6 +28,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Jend. Sudirman No.65, Langgini, Kec. Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Bangkinang',
                 'telepon' => '(0761) 32478',
                 'email' => 'sman2bangkinang@riau.sch.id',
@@ -37,6 +39,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Dr. H. Rahman Saleh No.55, Air Tiris / Sawah, Kec. Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 Bangkinang',
                 'telepon' => '-',
                 'email' => 'sman3bangkinangkec@gmail.com',
@@ -47,6 +50,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Poros Salo, Kec. Salo, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kampar',
                 'telepon' => '(0761) 598123',
                 'email' => 'sman1_kampar@yahoo.co.id',
@@ -57,6 +61,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Raya Pekanbaru - Bangkinang, Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Kampar',
                 'telepon' => '-',
                 'email' => 'sman2kampar_riau@gmail.com',
@@ -67,6 +72,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Raya Tg. Rambutan, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Bangkinang',
                 'telepon' => '(0761) 32189',
                 'email' => 'smkn1bkn_jaya@smk.belajar.id',
@@ -77,6 +83,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Tuanku Tambusai, Langgini, Kec. Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 Bangkinang',
                 'telepon' => '(0761) 31456',
                 'email' => 'smkn2bkn_official@gmail.com',
@@ -87,6 +94,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Lingkar, Kumantan, Kec. Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAN 1 Kampar',
                 'telepon' => '(0761) 789456',
                 'email' => 'man1kampar_kemenag@kemenag.go.id',
@@ -97,6 +105,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tanjung Rambutan, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAN 2 Kampar',
                 'telepon' => '(0761) 789457',
                 'email' => 'man2kampar_official@kemenag.go.id',
@@ -107,6 +116,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Negeri Kabupaten Kampar',
                 'telepon' => '-',
                 'email' => 'slbnegerikampar_riau@gmail.com',
@@ -117,6 +127,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. KH. Hasyim Asari, Laboy Jaya, Kec. Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Siak Hulu',
                 'telepon' => '(0761) 789123',
                 'email' => 'sman1siakhulu@sch.id',
@@ -127,6 +138,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Sekolah No. 1, Pangkalan Baru, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Siak Hulu',
                 'telepon' => '-',
                 'email' => 'sman2siakhulu@gmail.com',
@@ -137,6 +149,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Buluh Cina, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 Siak Hulu',
                 'telepon' => '-',
                 'email' => 'sman3siakhulu@gmail.com',
@@ -147,6 +160,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tanah Merah, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smkn1siakhulu@smk.belajar.id',
@@ -157,6 +171,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pandau Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smkn2siakhulubaru@gmail.com',
@@ -167,6 +182,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Tapung',
                 'telepon' => '-',
                 'email' => 'sman1tapung@sch.id',
@@ -177,6 +193,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Tapung',
                 'telepon' => '-',
                 'email' => 'sman2tapung@gmail.com',
@@ -187,6 +204,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Danau Lancang, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Tapung',
                 'telepon' => '-',
                 'email' => 'smkn1tapung@gmail.com',
@@ -197,6 +215,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'sman1tapunghulu@sch.id',
@@ -207,6 +226,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Suka Ramai, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'sman2tapunghulu@gmail.com',
@@ -217,6 +237,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kasikan, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'sman1tapunghilir@sch.id',
@@ -227,6 +248,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kijang Jaya, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'sman2tapunghilir@gmail.com',
@@ -237,6 +259,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kota Garo, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Tambang',
                 'telepon' => '-',
                 'email' => 'sman1tambang@sch.id',
@@ -247,6 +270,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tambang, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Tambang',
                 'telepon' => '-',
                 'email' => 'sman2tambang@gmail.com',
@@ -257,6 +281,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kualu, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 Tambang',
                 'telepon' => '-',
                 'email' => 'sman3tambang@gmail.com',
@@ -267,6 +292,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tarai Bangun, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Tambang',
                 'telepon' => '-',
                 'email' => 'smkn1tambang@gmail.com',
@@ -277,6 +303,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kampar Kiri',
                 'telepon' => '-',
                 'email' => 'sman1kamparkiri@sch.id',
@@ -287,6 +314,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Lipat Kain, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Kampar Kiri',
                 'telepon' => '-',
                 'email' => 'smkn1kamparkiri@gmail.com',
@@ -297,6 +325,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Lipat Kain, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAN 3 Kampar',
                 'telepon' => '-',
                 'email' => 'man3kampar@kemenag.go.id',
@@ -307,6 +336,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Lipat Kain, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 XIII Koto Kampar',
                 'telepon' => '-',
                 'email' => 'sman1xiiikotokampar@sch.id',
@@ -317,6 +347,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tanjung Alai, Kec. XIII Koto Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 XIII Koto Kampar',
                 'telepon' => '-',
                 'email' => 'sman2xiiikotokampar@gmail.com',
@@ -327,6 +358,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Koto Mesjid, Kec. XIII Koto Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 XIII Koto Kampar',
                 'telepon' => '-',
                 'email' => 'sman3xiiikotokampar@gmail.com',
@@ -337,6 +369,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Balung, Kec. XIII Koto Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 XIII Koto Kampar',
                 'telepon' => '-',
                 'email' => 'smkn1xiiikotokampar@gmail.com',
@@ -347,6 +380,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tanjung Alai, Kec. XIII Koto Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kampar Kiri Hilir',
                 'telepon' => '-',
                 'email' => 'sman1kamparkirihilir@gmail.com',
@@ -357,6 +391,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Sungai Pagar, Kec. Kampar Kiri Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Kampar Kiri Hilir',
                 'telepon' => '-',
                 'email' => 'sman2kamparkirihilir@gmail.com',
@@ -367,6 +402,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Sungai Pagar, Kec. Kampar Kiri Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Kampar Kiri Hilir',
                 'telepon' => '-',
                 'email' => 'smkn1kamparkirihilir@gmail.com',
@@ -377,6 +413,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Sungai Pagar, Kec. Kampar Kiri Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kampar Kiri Hulu',
                 'telepon' => '-',
                 'email' => 'sman1kamparkirihulu@gmail.com',
@@ -387,6 +424,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Gema, Kec. Kampar Kiri Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kampar Kiri Tengah',
                 'telepon' => '-',
                 'email' => 'sman1kamparkiritengah@gmail.com',
@@ -397,6 +435,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Simalinyang, Kec. Kampar Kiri Tengah, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Kampar Kiri Tengah',
                 'telepon' => '-',
                 'email' => 'sman2kamparkiritengah@gmail.com',
@@ -407,6 +446,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bukit Sakai, Kec. Kampar Kiri Tengah, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Kampar Kiri Tengah',
                 'telepon' => '-',
                 'email' => 'smkn1kamparkiritengah@gmail.com',
@@ -417,6 +457,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Simalinyang, Kec. Kampar Kiri Tengah, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Gunung Sahilan',
                 'telepon' => '-',
                 'email' => 'sman1gunungsahilan@gmail.com',
@@ -427,6 +468,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Gunung Sahilan, Kec. Gunung Sahilan, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Gunung Sahilan',
                 'telepon' => '-',
                 'email' => 'sman2gunungsahilan@gmail.com',
@@ -437,6 +479,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Subarak, Kec. Gunung Sahilan, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Gunung Sahilan',
                 'telepon' => '-',
                 'email' => 'smkn1gunungsahilan@gmail.com',
@@ -447,6 +490,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Gunung Sahilan, Kec. Gunung Sahilan, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Perhentian Raja',
                 'telepon' => '-',
                 'email' => 'sman1perhentianraja@gmail.com',
@@ -457,6 +501,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pantai Raja, Kec. Perhentian Raja, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Perhentian Raja',
                 'telepon' => '-',
                 'email' => 'sman2perhentianraja@gmail.com',
@@ -467,6 +512,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pantai Raja, Kec. Perhentian Raja, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Perhentian Raja',
                 'telepon' => '-',
                 'email' => 'smkn1perhentianraja@gmail.com',
@@ -477,6 +523,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pantai Raja, Kec. Perhentian Raja, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Rumbio Jaya',
                 'telepon' => '-',
                 'email' => 'sman1rumbiojaya@gmail.com',
@@ -487,6 +534,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Teratak, Kec. Rumbio Jaya, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Rumbio Jaya',
                 'telepon' => '-',
                 'email' => 'sman2rumbiojaya@gmail.com',
@@ -497,6 +545,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Teratak, Kec. Rumbio Jaya, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Rumbio Jaya',
                 'telepon' => '-',
                 'email' => 'smkn1rumbiojaya@gmail.com',
@@ -507,6 +556,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Rumbio Jaya, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Tapung Selatan',
                 'telepon' => '-',
                 'email' => 'sman1tapungselatan@gmail.com',
@@ -517,6 +567,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Gading Permai, Kec. Tapung Selatan, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Tapung Selatan',
                 'telepon' => '-',
                 'email' => 'sman2tapungselatan@gmail.com',
@@ -527,6 +578,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Landak, Kec. Tapung Selatan, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Tapung Selatan',
                 'telepon' => '-',
                 'email' => 'smkn1tapungselatan@gmail.com',
@@ -537,6 +589,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tapung Selatan, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kampar Utara',
                 'telepon' => '-',
                 'email' => 'sman1kamparutara@gmail.com',
@@ -547,6 +600,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Sembapan, Kec. Kampar Utara, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Kampar Utara',
                 'telepon' => '-',
                 'email' => 'sman2kamparutara@gmail.com',
@@ -557,6 +611,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampung Panjang, Kec. Kampar Utara, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Kampar Utara',
                 'telepon' => '-',
                 'email' => 'smkn1kamparutara@gmail.com',
@@ -567,6 +622,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Sembapan, Kec. Kampar Utara, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kampar Timur',
                 'telepon' => '-',
                 'email' => 'sman1kampartimur@gmail.com',
@@ -577,6 +633,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar Timur, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Kampar Timur',
                 'telepon' => '-',
                 'email' => 'sman2kampartimur@gmail.com',
@@ -587,6 +644,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pulau Birandang, Kec. Kampar Timur, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 Kampar Timur',
                 'telepon' => '-',
                 'email' => 'sman3kampartimur@gmail.com',
@@ -597,6 +655,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar Timur, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Kampar Timur',
                 'telepon' => '-',
                 'email' => 'smkn1kampartimur@gmail.com',
@@ -607,6 +666,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar Timur, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Salo',
                 'telepon' => '-',
                 'email' => 'sman1salo@gmail.com',
@@ -617,6 +677,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Salo, Kec. Salo, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Salo',
                 'telepon' => '-',
                 'email' => 'sman2salo@gmail.com',
@@ -627,6 +688,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Siabu, Kec. Salo, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Salo',
                 'telepon' => '-',
                 'email' => 'smkn1salo@gmail.com',
@@ -637,6 +699,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Salo, Kec. Salo, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Kuok',
                 'telepon' => '-',
                 'email' => 'sman1kuok@gmail.com',
@@ -647,6 +710,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Raya Pekanbaru - Payakumbuh Km.72, Kuok, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Kuok',
                 'telepon' => '-',
                 'email' => 'sman2kuok@gmail.com',
@@ -657,6 +721,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Merangin, Kec. Kuok, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Kuok',
                 'telepon' => '-',
                 'email' => 'smkn1kuok@gmail.com',
@@ -667,6 +732,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kuok, Kec. Kuok, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 1 Koto Kampar Hulu',
                 'telepon' => '-',
                 'email' => 'sman1kotokamparhulu@gmail.com',
@@ -677,6 +743,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tanjung, Kec. Koto Kampar Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 1 Koto Kampar Hulu',
                 'telepon' => '-',
                 'email' => 'smkn1kotokamparhulu@gmail.com',
@@ -686,17 +753,9 @@ class SekolahSeeder extends Seeder
                 'updated_at' => now(),
                 'alamat' => 'Tanjung, Kec. Koto Kampar Hulu, Kabupaten Kampar, Riau',
             ],
+
             [
-                'nama' => 'SMAN 2 Tapung Hulu',
-                'telepon' => '-',
-                'email' => 'sman2tapunghulu@gmail.com',
-                'latitude' => 0.789124,
-                'longitude' => 101.021458,
-                'created_at' => now(),
-                'updated_at' => now(),
-                'alamat' => 'Kasikan, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
-            ],
-            [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'sman3tapunghulu@gmail.com',
@@ -707,6 +766,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Inti, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'smkn2tapunghulu@gmail.com',
@@ -717,6 +777,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kasikan, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 3 Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'smkn3tapunghulu@gmail.com',
@@ -726,17 +787,9 @@ class SekolahSeeder extends Seeder
                 'updated_at' => now(),
                 'alamat' => 'Kasikan, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
+
             [
-                'nama' => 'SMAN 2 Tapung Hilir',
-                'telepon' => '-',
-                'email' => 'sman2tapunghilir@gmail.com',
-                'latitude' => 0.631254,
-                'longitude' => 101.265412,
-                'created_at' => now(),
-                'updated_at' => now(),
-                'alamat' => 'Kota Garo, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
-            ],
-            [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'sman3tapunghilir@gmail.com',
@@ -747,6 +800,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Sekijang, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'smkn2tapunghilir@gmail.com',
@@ -757,6 +811,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kota Garo, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 3 Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'smkn3tapunghilir@gmail.com',
@@ -767,6 +822,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kota Garo, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 4 Tambang',
                 'telepon' => '-',
                 'email' => 'sman4tambang@gmail.com',
@@ -777,6 +833,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 5 Tambang',
                 'telepon' => '-',
                 'email' => 'sman5tambang@gmail.com',
@@ -787,6 +844,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kualu, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 Tambang',
                 'telepon' => '-',
                 'email' => 'smkn2tambang@gmail.com',
@@ -797,6 +855,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 3 Tambang',
                 'telepon' => '-',
                 'email' => 'smkn3tambang@gmail.com',
@@ -807,6 +866,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 2 Kampar Kiri',
                 'telepon' => '-',
                 'email' => 'sman2kamparkiri@gmail.com',
@@ -817,6 +877,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Lipat Kain Selatan, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 4 Kampar Kiri',
                 'telepon' => '-',
                 'email' => 'sman4kamparkiri@gmail.com',
@@ -827,6 +888,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Lipat Kain Utara, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 Kampar Kiri',
                 'telepon' => '-',
                 'email' => 'smkn2kamparkiri@gmail.com',
@@ -837,6 +899,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Lipat Kain, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 4 Siak Hulu',
                 'telepon' => '-',
                 'email' => 'sman4siakhulu@gmail.com',
@@ -847,6 +910,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 5 Siak Hulu',
                 'telepon' => '-',
                 'email' => 'sman5siakhulu@gmail.com',
@@ -857,6 +921,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pangkalan Baru, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 3 Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkn3bangkinang@gmail.com',
@@ -867,6 +932,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Lingkar, Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 4 Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkn4bangkinang@gmail.com',
@@ -877,6 +943,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 XIII Koto Kampar',
                 'telepon' => '-',
                 'email' => 'smkn2xiiikotokampar@gmail.com',
@@ -887,6 +954,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Koto Mesjid, Kec. XIII Koto Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAN 3 Tapung',
                 'telepon' => '-',
                 'email' => 'sman3tapung@gmail.com',
@@ -897,6 +965,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan Timur, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 2 Tapung',
                 'telepon' => '-',
                 'email' => 'smkn2tapung@gmail.com',
@@ -907,6 +976,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Danau Lancang, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMKN 3 Tapung',
                 'telepon' => '-',
                 'email' => 'smkn3tapung@gmail.com',
@@ -917,6 +987,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Muhammadiyah Bangkinang',
                 'telepon' => '-',
                 'email' => 'smamuhbangkinang@gmail.com',
@@ -927,6 +998,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Teuku Umar, Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta PGRI Bangkinang',
                 'telepon' => '-',
                 'email' => 'smapgribkn@gmail.com',
@@ -937,6 +1009,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. A. Yani, Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta YLPP Indonesia Bangkinang',
                 'telepon' => '-',
                 'email' => 'smaylppbkn@gmail.com',
@@ -947,6 +1020,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta PGRI Petapahan',
                 'telepon' => '-',
                 'email' => 'smapgripetapahan@gmail.com',
@@ -957,6 +1031,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Islam Al-Falah Bangkinang',
                 'telepon' => '-',
                 'email' => 'smaislamalfalahbkn@gmail.com',
@@ -967,6 +1042,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Sisingamangaraja, Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Taman Siswa Bangkinang',
                 'telepon' => '-',
                 'email' => 'smatamansiswabkn@gmail.com',
@@ -977,6 +1053,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. DI Panjaitan, Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Pesantren Darul Quran Kampar',
                 'telepon' => '-',
                 'email' => 'smadarulqurankampar@gmail.com',
@@ -987,6 +1064,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Al-Hidayah Kampar',
                 'telepon' => '-',
                 'email' => 'smaalhidayahkampar@gmail.com',
@@ -997,6 +1075,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Muara Takus, Kec. XIII Koto Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta YLPP Tapung',
                 'telepon' => '-',
                 'email' => 'smaylpptapung@gmail.com',
@@ -1007,6 +1086,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Bina Insani Tapung',
                 'telepon' => '-',
                 'email' => 'smabinainsanitapung@gmail.com',
@@ -1017,6 +1097,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kijang Makmur, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta YLPP Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'smaylpptapunghulu@gmail.com',
@@ -1027,6 +1108,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Suka Ramai, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Bina Bangsa Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'smabinabangsatapunghilir@gmail.com',
@@ -1037,6 +1119,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kijang Jaya, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta PGRI Tambang',
                 'telepon' => '-',
                 'email' => 'smapgritambang@gmail.com',
@@ -1047,6 +1130,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tambang, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Islam Terpadu Bangkinang',
                 'telepon' => '-',
                 'email' => 'smaitbangkinang@gmail.com',
@@ -1057,6 +1141,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Al-Kautsar Bangkinang',
                 'telepon' => '-',
                 'email' => 'smaalfausarbkn@gmail.com',
@@ -1067,6 +1152,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Darul Huda Bangkinang',
                 'telepon' => '-',
                 'email' => 'smadarulhudabkn@gmail.com',
@@ -1077,6 +1163,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Ash-Shiddiqiyyah Kampar',
                 'telepon' => '-',
                 'email' => 'smaashshiddiqiyyah@gmail.com',
@@ -1087,6 +1174,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Babussalam Kampar',
                 'telepon' => '-',
                 'email' => 'smababussalamkampar@gmail.com',
@@ -1097,6 +1185,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Nurul Islam Tapung',
                 'telepon' => '-',
                 'email' => 'smanurulislamtapung@gmail.com',
@@ -1107,6 +1196,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Al-Hidayah Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'smaalhidaayahtapunghulu@gmail.com',
@@ -1117,6 +1207,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kasikan, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Darussalam Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'smadarussalamtapunghilir@gmail.com',
@@ -1127,6 +1218,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kota Garo, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Al-Fajar Tambang',
                 'telepon' => '-',
                 'email' => 'smaalffajartambang@gmail.com',
@@ -1137,6 +1229,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tarai Bangun, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Cahaya Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smacahayasiakhulu@gmail.com',
@@ -1147,6 +1240,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pandau Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Mandiri Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smamandirisiakhulu@gmail.com',
@@ -1157,6 +1251,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Al-Huda Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkalhudabkn@gmail.com',
@@ -1167,6 +1262,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. A. Yani, Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Taruna Bangkinang',
                 'telepon' => '-',
                 'email' => 'smktarunabkn@gmail.com',
@@ -1177,6 +1273,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Kesehatan Kampar',
                 'telepon' => '-',
                 'email' => 'smkkesehatankampar@gmail.com',
@@ -1187,6 +1284,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta PGRI Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkpgribkn2@gmail.com',
@@ -1197,6 +1295,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. A. Yani, Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Teknologi Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkteknologibkn@gmail.com',
@@ -1207,6 +1306,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Islam Terpadu Kampar',
                 'telepon' => '-',
                 'email' => 'smkitkampar@gmail.com',
@@ -1217,6 +1317,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Pembangunan Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkpembangunanbkn@gmail.com',
@@ -1227,6 +1328,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Taruna Mandiri Tapung',
                 'telepon' => '-',
                 'email' => 'smktarunamandiritapung@gmail.com',
@@ -1237,6 +1339,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Bina Profesi Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'smabinaprotesitapunghulu@gmail.com',
@@ -1247,6 +1350,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kasikan, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Gajah Mada Tambang',
                 'telepon' => '-',
                 'email' => 'smkgajahmadatambang@gmail.com',
@@ -1257,6 +1361,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Mandiri Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smkmandirisiakhulu@gmail.com',
@@ -1267,6 +1372,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pandau Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Bina Karya Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smabinakaryasiakhulu@gmail.com',
@@ -1277,6 +1383,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta YLPP Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkylppbkn_smk@gmail.com',
@@ -1287,6 +1394,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta PGRI Kampar',
                 'telepon' => '-',
                 'email' => 'smkpgrikampar@gmail.com',
@@ -1297,6 +1405,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Nusantara Tapung',
                 'telepon' => '-',
                 'email' => 'smknusantaratapung@gmail.com',
@@ -1307,6 +1416,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Persada Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'smkpersadatapunghulu@gmail.com',
@@ -1317,6 +1427,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Suka Ramai, Kec. Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Harapan Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'smkharapantapunghilir@gmail.com',
@@ -1327,6 +1438,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kijang Jaya, Kec. Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Bhakti Tambang',
                 'telepon' => '-',
                 'email' => 'smkbhaktitambang@gmail.com',
@@ -1337,6 +1449,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tambang, Kec. Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta PGRI Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smkpgrisiakhulu@gmail.com',
@@ -1347,6 +1460,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pandau Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Teknologi Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smkteknologisiakhulu@gmail.com',
@@ -1357,6 +1471,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Al-Huda Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smkalhudasiakhulu@gmail.com',
@@ -1367,6 +1482,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pandau Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Kesehatan Siak Hulu',
                 'telepon' => '-',
                 'email' => 'smkkesehatansiakhulu@gmail.com',
@@ -1377,6 +1493,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kubang Jaya, Kec. Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Pariwisata Kampar',
                 'telepon' => '-',
                 'email' => 'smkpariwisatakampar@gmail.com',
@@ -1387,6 +1504,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Swasta Bisnis Manajemen Kampar',
                 'telepon' => '-',
                 'email' => 'smkbisniskampar@gmail.com',
@@ -1397,6 +1515,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAN 1 Kampar',
                 'telepon' => '(0761) 789456',
                 'email' => 'man1kampar@kemenag.go.id',
@@ -1407,6 +1526,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tanjung Rambutan, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAN 2 Kampar',
                 'telepon' => '(0761) 789457',
                 'email' => 'man2kampar@kemenag.go.id',
@@ -1416,17 +1536,9 @@ class SekolahSeeder extends Seeder
                 'updated_at' => now(),
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
+
             [
-                'nama' => 'MAN 3 Kampar',
-                'telepon' => '-',
-                'email' => 'man3kampar@kemenag.go.id',
-                'latitude' => -0.05412,
-                'longitude' => 100.954125,
-                'created_at' => now(),
-                'updated_at' => now(),
-                'alamat' => 'Lipat Kain, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
-            ],
-            [
+                'id' => Str::uuid(),
                 'nama' => 'MAN 4 Kampar',
                 'telepon' => '-',
                 'email' => 'man4kampar@kemenag.go.id',
@@ -1437,6 +1549,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Raya Pekanbaru - Bangkinang Km 35, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAN 5 Kampar',
                 'telepon' => '-',
                 'email' => 'man5kampar@kemenag.go.id',
@@ -1447,6 +1560,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Desa Kuntu, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAN Kuok (MAN 6 Kampar)',
                 'telepon' => '-',
                 'email' => 'mankuok@kemenag.go.id',
@@ -1457,6 +1571,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. A. Rahman Samad, Kuok, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Pasir Sialang',
                 'telepon' => '-',
                 'email' => 'maspasirsialang@kemenag.go.id',
@@ -1467,6 +1582,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Pasir Sialang, Bangkinang Seberang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Kampung Gadang',
                 'telepon' => '-',
                 'email' => 'maskampunggadang@kemenag.go.id',
@@ -1477,6 +1593,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Peltu Syaidan, Bangkinang Seberang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS PP. Al-Hikmah Pualu',
                 'telepon' => '-',
                 'email' => 'masalhikmahpualu@kemenag.go.id',
@@ -1487,6 +1604,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'LK III Kelurahan Pualu, Bangkinang Seberang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS PP. Darun Nahdhah',
                 'telepon' => '-',
                 'email' => 'masdarunnahdhah@kemenag.go.id',
@@ -1497,6 +1615,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Syarifuddin Syarif I, Bangkinang Seberang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Al-Falah Air Tiris',
                 'telepon' => '-',
                 'email' => 'masalfalahairtiris@gmail.com',
@@ -1507,6 +1626,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Ansharullah',
                 'telepon' => '-',
                 'email' => 'masansharullah@gmail.com',
@@ -1517,6 +1637,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Air Tiris, Kec. Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Asy-Syafi\'iyah Air Tiris',
                 'telepon' => '-',
                 'email' => 'masasysyafiyah@kemenag.go.id',
@@ -1527,6 +1648,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. Negara Pekanbaru-Bangkinang Km 50, Air Tiris, Kampar',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Al-Islam Rumbio',
                 'telepon' => '-',
                 'email' => 'masalislamrumbio@kemenag.go.id',
@@ -1537,6 +1659,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Rumbio, Kec. Rumbio Jaya, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS PP. Babussalam Langgini',
                 'telepon' => '-',
                 'email' => 'masbabussalamlanggini@kemenag.go.id',
@@ -1547,6 +1670,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Langgini, Kec. Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Al-Huda Petapahan',
                 'telepon' => '-',
                 'email' => 'masalhudapetapahan@kemenag.go.id',
@@ -1557,6 +1681,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Petapahan, Kec. Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Kuok',
                 'telepon' => '-',
                 'email' => 'maskuok@kemenag.go.id',
@@ -1567,6 +1692,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kuok, Kec. Kuok, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Darul Huda Lipat Kain',
                 'telepon' => '-',
                 'email' => 'masdarulhudalipatkain@kemenag.go.id',
@@ -1577,6 +1703,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Lipat Kain, Kec. Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'MAS Subulussalam Tapung',
                 'telepon' => '-',
                 'email' => 'massubulussalamtapung@kemenag.go.id',
@@ -1587,6 +1714,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Negeri Kabupaten Kampar',
                 'telepon' => '-',
                 'email' => 'slbnegerikampar@gmail.com',
@@ -1597,6 +1725,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Jl. KH. Hasyim Asari, Laboy Jaya, Kec. Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Melati Kabupaten Kampar',
                 'telepon' => '-',
                 'email' => 'slbmelatikampar@gmail.com',
@@ -1607,6 +1736,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Al-Fauzan Kampar',
                 'telepon' => '-',
                 'email' => 'slbalfauzankampar@gmail.com',
@@ -1617,6 +1747,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Cahaya Bunda Kampar',
                 'telepon' => '-',
                 'email' => 'slbcahayabundakampar@gmail.com',
@@ -1627,6 +1758,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Mutiara Kampar',
                 'telepon' => '-',
                 'email' => 'slbmutiarakampar@gmail.com',
@@ -1637,6 +1769,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Siak Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Al-Ikhlas Kampar',
                 'telepon' => '-',
                 'email' => 'slbakhllaskampar@gmail.com',
@@ -1647,6 +1780,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tapung, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Kasih Ibu Kampar',
                 'telepon' => '-',
                 'email' => 'slbkasihibukampar@gmail.com',
@@ -1657,6 +1791,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tambang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Permata Hati Kampar',
                 'telepon' => '-',
                 'email' => 'slbpermatahatikampar@gmail.com',
@@ -1667,6 +1802,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Bina Bangsa Kampar',
                 'telepon' => '-',
                 'email' => 'slbbinabangsakampar@gmail.com',
@@ -1677,6 +1813,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Mandiri Kampar',
                 'telepon' => '-',
                 'email' => 'slbmandirikampar@gmail.com',
@@ -1687,6 +1824,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Tunas Bangsa Kampar',
                 'telepon' => '-',
                 'email' => 'slbtunasbangsakampar@gmail.com',
@@ -1697,6 +1835,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar Kiri, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SLB Sejahtera Kampar',
                 'telepon' => '-',
                 'email' => 'slbsejahterakampar@gmail.com',
@@ -1707,6 +1846,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'XIII Koto Kampar, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta Purna Manunggal',
                 'telepon' => '-',
                 'email' => 'smapurnamanunggal@gmail.com',
@@ -1717,6 +1857,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Purna Manunggal, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Swasta LPM Muara Mahat Baru',
                 'telepon' => '-',
                 'email' => 'smapmuaramahatbaru@gmail.com',
@@ -1727,6 +1868,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Muara Mahat Baru, Tapung Hulu, Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Dharma Asih Tapung Hilir',
                 'telepon' => '-',
                 'email' => 'smkdharmaasih@gmail.com',
@@ -1737,6 +1879,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tapung Hilir, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMAS Persiapan Tapung Hulu',
                 'telepon' => '-',
                 'email' => 'smaspersiapantapung@gmail.com',
@@ -1747,6 +1890,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Tapung Hulu, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Amanah Kampar Kiri Tengah',
                 'telepon' => '-',
                 'email' => 'smkamanahkkts@gmail.com',
@@ -1757,6 +1901,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar Kiri Tengah, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMA Sungai Putih Kampar Kiri Tengah',
                 'telepon' => '-',
                 'email' => 'smasungaiputih@gmail.com',
@@ -1767,6 +1912,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Kampar Kiri Tengah, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Dwi Dharma Bangkinang',
                 'telepon' => '-',
                 'email' => 'smkdwidharmabkn@gmail.com',
@@ -1777,6 +1923,7 @@ class SekolahSeeder extends Seeder
                 'alamat' => 'Bangkinang, Kabupaten Kampar, Riau',
             ],
             [
+                'id' => Str::uuid(),
                 'nama' => 'SMK Muhammadiyah Kuok',
                 'telepon' => '-',
                 'email' => 'smkmuhkuok@gmail.com',
@@ -1788,10 +1935,11 @@ class SekolahSeeder extends Seeder
             ],
         ];
         $sekolahStore = [];
-        foreach ($dataSekolah as $key=> $item) {
+        foreach ($dataSekolah as $key => $item) {
             $sekolahStore[] = [
-                'nama' => $item['nama'],
+                'id' => Str::uuid(),
                 'npsn' => $key,
+                'nama' => $item['nama'],
                 'telepon' => $item['telepon'],
                 'email' => $item['email'],
                 'latitude' => $item['latitude'],

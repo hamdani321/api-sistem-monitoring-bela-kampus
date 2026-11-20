@@ -5,6 +5,7 @@ namespace App\Services;
 
 use App\Models\ReportKegiatan;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ReportKegiatanServices
 {
@@ -13,6 +14,7 @@ class ReportKegiatanServices
         $filePath = $dataReport['foto']->store('foto');
         $mahasiswa = Auth::user()->load('mahasiswa')['mahasiswa'];
         return ReportKegiatan::create([
+            "id" => Str::uuid(),
             "registrasi_id" => $dataReport['registrasi_id'],
             "nim_mahasiswa" => $mahasiswa['nim'],
             "nama_pic" => $dataReport['nama_pic'],

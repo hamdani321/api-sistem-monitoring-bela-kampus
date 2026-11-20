@@ -10,11 +10,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-#[Table("registrasi")]
+#[Table("registrasi", 'id', 'string', false)]
 #[Fillable(["id", 'portal_id', 'sekolah_id', 'nim_mahasiswa', 'tipe', 'status', 'created_at', 'updated_at'])]
 #[UsePolicy(RegistrasiPolicy::class)]
 class Registrasi extends Model
 {
+
     public function portal()
     {
         return $this->belongsTo(Portal::class);
