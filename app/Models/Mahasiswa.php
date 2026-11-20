@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-#[Table("mahasiswa")]
+#[Table("mahasiswa", 'id', 'string', false)]
 #[Fillable(["id", "nama", 'email', 'nim', 'kode_prodi', 'kelas_id', 'jenis_kelamin', 'created_at', 'updated_at'])]
 class Mahasiswa extends Model
 {
