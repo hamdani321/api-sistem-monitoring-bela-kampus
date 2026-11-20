@@ -20,14 +20,14 @@ class ReportKegiatanResource extends JsonResource
             "nim_mahasiswa" => $this->nim_mahasiswa,
             "nama_pic" => $this->nama_pic,
             "nomor_hp_pic" => $this->nomor_hp_pic,
-            "foto" => $this->foto,
             'video' => $this->video,
             "deskripsi" => $this->deskripsi,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
 
             //relasi
-            'mahasiswa' => $this->mahasiswa
+            'mahasiswa' => $this->mahasiswa,
+            'foto' => $this->foto
         ];
         // return parent::toArray($request);
     }

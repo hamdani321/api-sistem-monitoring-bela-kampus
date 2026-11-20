@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('portal', function (Blueprint $table) {
             $table->uuid("id")->primary()->unique();
-            $table->integer('tahun_ajaran_id');
+            $table->string('tahun_ajaran_id');
             $table->timestamp('waktu_mulai');
             $table->timestamp('waktu_selesai');
-            $table->enum("status", ["AKTIF", "NONAKTIF"])->default("AKTIF");
+            $table->enum("status", ["AKTIF", "NONAKTIF"])->default("NONAKTIF");
             $table->timestamps();
         });
     }

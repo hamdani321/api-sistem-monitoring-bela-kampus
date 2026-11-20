@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Table('report_kegiatan', 'id', 'string', false)]
@@ -15,5 +16,9 @@ class ReportKegiatan extends Model
     public function mahasiswa(): HasOne
     {
         return $this->hasOne(Mahasiswa::class, 'nim', 'nim_mahasiswa');
+    }
+
+    public function foto() : HasMany {
+        return $this->hasMany(FotoKegiatan::class, 'report_kegiatan_id', 'id');
     }
 }

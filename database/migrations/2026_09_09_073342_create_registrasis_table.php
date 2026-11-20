@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('registrasi', function (Blueprint $table) {
             $table->uuid("id")->primary()->unique();
-            $table->integer('portal_id');
-            $table->integer("sekolah_id");
+            $table->string('portal_id');
+            $table->string("sekolah_id");
             $table->string('nim_mahasiswa');
             $table->enum('tipe', ["Individu", 'Kelompok']);
             $table->enum("status", ["Pending", "Approve"])->default("Pending");

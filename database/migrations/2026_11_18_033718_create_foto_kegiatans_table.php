@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('foto_kegiatan', function (Blueprint $table) {
             $table->uuid("id")->primary()->unique();
-            $table->integer('report_kegiatan_id');
+            $table->string('report_kegiatan_id');
             $table->string('path');
             $table->timestamps();
         });

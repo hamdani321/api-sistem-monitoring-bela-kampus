@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreReportKegiatanRequest;
+use App\Http\Requests\ReportKegiatanRequest;
 use App\Http\Resources\ReportKegiatanResource;
 use App\Models\ReportKegiatan;
 use App\Services\ReportKegiatanServices;
@@ -32,11 +32,13 @@ class ReportKegiatanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreReportKegiatanRequest $request)
+    public function store(ReportKegiatanRequest $request)
     {
 
-        $dataValid = $request->validated();
-        return response($this->reportKegiatanServices->createReportKegiatan($dataValid));
+    // return response(['message'=> "Hlkj", 'data' => $request->validated()]);
+        return $this->reportKegiatanServices->createReportKegiatan($request->validated());
+        // $dataValid = $request->validated();
+        // return response($this->reportKegiatanServices->createReportKegiatan($dataValid));
     }
 
     /**
@@ -46,8 +48,9 @@ class ReportKegiatanController extends Controller
     {
         $reportKegiatan = ReportKegiatan::find($id);
         $this->authorize('view', $reportKegiatan);
-        $reportKegiatan = ReportKegiatan::with(['mahasiswa'])->find($id);
-        return new ReportKegiatanResource($reportKegiatan);
+        $reportKegiatan = ReportKegiatan::with(['mahasiswa', 'foto'])->find($id);
+        return response(['message' => "Berhasil ambil data report kegiatan!", "data" => $reportKegiatan]);
+        // return new ReportKegiatanResource($reportKegiatan);
     }
 
     /**
