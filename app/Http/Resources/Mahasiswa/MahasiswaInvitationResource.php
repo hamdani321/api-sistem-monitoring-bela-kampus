@@ -27,7 +27,7 @@ class MahasiswaInvitationResource extends JsonResource
             "updated_at" => $this->updated_at,
 
             //relasi
-            "undangan" => $this->undangan,
+            // "undangan" => $this->undangan,
             "prodi" => $this->prodi
         ];
     }

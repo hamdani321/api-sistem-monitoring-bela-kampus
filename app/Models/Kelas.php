@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Table("kelas", 'id', 'string', false)]
-#[Fillable(["id", "nama", 'prodi_id', 'dosen_id', 'created_at', 'updated_at'])]
+#[Fillable(["id", 'kode_kelas', "nama", 'prodi_id', 'dosen_id', 'created_at', 'updated_at'])]
 class Kelas extends Model
 {
 

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->uuid("id")->primary()->unique();
+            $table->string('kode_kelas')->unique();
             $table->string('nama');
             $table->string('prodi_id');
             $table->string('dosen_id')->comment('wali kelas');

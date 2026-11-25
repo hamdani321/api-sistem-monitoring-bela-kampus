@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Table("mahasiswa", 'id', 'string', false)]
-#[Fillable(["id", "nama", 'email', 'nim', 'kode_prodi', 'kelas_id', 'jenis_kelamin', 'created_at', 'updated_at'])]
+#[Fillable(["id", "nama", 'email', 'nim', 'kode_prodi', 'kode_kelas', 'jenis_kelamin', 'created_at', 'updated_at'])]
 class Mahasiswa extends Model
 {
     protected $primaryKey = 'id';
@@ -37,13 +37,9 @@ class Mahasiswa extends Model
         return $this->hasOne(Prodi::class, "kode_prodi", "kode_prodi");
     }
 
-    public function undangan(): HasMany
+    public function kelas(): HasOne
     {
-        return $this->hasMany(Undangan::class, "nim_mahasiswa", "nim");
-    }
-    public function kelas()
-    {
-        return $this->belongsTo(Kelas::class);
+        return $this->hasOne(Kelas::class, 'kode_kelas', "kode_kelas");
     }
 
     public function registrasi(): HasMany

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('nim_mahasiswa')->comment("Mahasiswa yang membuat laporan!");
             $table->string('nama_pic');
             $table->string('nomor_hp_pic');
-            $table->string('foto');
             $table->string('video')->nullable();
             $table->text("deskripsi");
             $table->timestamps();

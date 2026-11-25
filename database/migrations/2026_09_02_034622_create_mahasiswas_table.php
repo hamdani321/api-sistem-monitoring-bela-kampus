@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('nim')->unique();
             $table->string('kode_prodi');
-            $table->string('kelas_id');
+            $table->string('kode_kelas');
             $table->enum("jenis_kelamin", ['Laki-Laki', "Perempuan"]);
             $table->timestamps();
         });
