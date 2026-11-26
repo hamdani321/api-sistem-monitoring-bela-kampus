@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\DashboardController;
+use App\Http\Controllers\API\FileController;
 use App\Http\Controllers\API\KegiatanLaporanController;
 use App\Http\Controllers\API\KelasController;
 use App\Http\Controllers\API\SekolahController;
@@ -74,6 +75,9 @@ Route::middleware("auth:sanctum")->group(function () {
 
     //logout
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::get('/file/{fileId}', [FileController::class, "view_file"]);
 });
+
 
 Route::post('/auth', [AuthController::class, 'auth']);
