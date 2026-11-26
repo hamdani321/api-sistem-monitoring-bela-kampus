@@ -35,10 +35,7 @@ class ReportKegiatanController extends Controller
     public function store(ReportKegiatanRequest $request)
     {
 
-    // return response(['message'=> "Hlkj", 'data' => $request->validated()]);
         return $this->reportKegiatanServices->createReportKegiatan($request->validated());
-        // $dataValid = $request->validated();
-        // return response($this->reportKegiatanServices->createReportKegiatan($dataValid));
     }
 
     /**

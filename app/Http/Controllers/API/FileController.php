@@ -11,6 +11,6 @@ class FileController extends Controller
     public function view_file(string $fileId)
     {
         $file = FotoKegiatan::find($fileId);
-        return response()->file(Storage::disk("public")->path($file->path));
+        return response()->file(Storage::disk("public")->path("foto/" . $file->path));
     }
 }
